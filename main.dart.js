@@ -582,8 +582,8 @@ q.Cb()
 l.z=s
 q.Bq()
 return q},
-LZ(a){return B.d.cR((a+1)*A.ay())+2},
-LY(a){return B.d.cR((a+1)*A.ay())+2},
+LZ(a){return B.d.cS((a+1)*A.ay())+2},
+LY(a){return B.d.cS((a+1)*A.ay())+2},
 afi(a){a.remove()},
 a4m(a){if(a==null)return null
 switch(a.a){case 3:return"source-over"
@@ -702,7 +702,7 @@ l=A.eV(a)
 m.setProperty("transform",l,"")
 i=e}else{l=n.c
 if(l!=null){d=l.a
-if((d.at?d.CW:-1)!==-1){a1=l.d_(0)
+if((d.at?d.CW:-1)!==-1){a1=l.d0(0)
 g=a1.a
 f=a1.b
 m=new Float32Array(16)
@@ -748,7 +748,7 @@ acu(a){var s,r
 if(a!=null){s=a.b
 r=$.bP().w
 return"blur("+A.h(s*(r==null?A.ay():r))+"px)"}else return"none"},
-ac6(a,b){var s,r,q,p,o="setAttribute",n=b.d_(0),m=n.c,l=n.d
+ac6(a,b){var s,r,q,p,o="setAttribute",n=b.d0(0),m=n.c,l=n.d
 $.a3y=$.a3y+1
 s=$.a8_().cloneNode(!1)
 r=self.document.createElementNS("http://www.w3.org/2000/svg","defs")
@@ -1165,7 +1165,7 @@ a3=Math.max(a3,d)
 n=Math.min(n,a1)
 a6=Math.min((a3-p)/a8,(Math.max(a5,a1)-n)/a9)
 if(a6<1e-9||a6===1)return 1
-if(a6>1){a6=Math.min(4,B.d.cR(a6/2)*2)
+if(a6>1){a6=Math.min(4,B.d.cS(a6/2)*2)
 s=a8*a9
 if(s*a6*a6>4194304&&a6>2)a6=3355443.2/s}else a6=Math.max(2/B.d.d7(2/a6),0.0001)
 return a6},
@@ -1231,14 +1231,14 @@ n=a0+3
 m[n]=m[n]-a*l[n]}return new A.T8(j,m,l,o,!r)},
 a7G(a,b,c,d,e,f,g){var s,r
 if(b===c){s=""+b
-a.cO(d+" = "+(d+"_"+s)+";")
-a.cO(f+" = "+(f+"_"+s)+";")}else{r=B.f.bV(b+c,2)
+a.cP(d+" = "+(d+"_"+s)+";")
+a.cP(f+" = "+(f+"_"+s)+";")}else{r=B.f.bV(b+c,2)
 s=r+1
-a.cO("if ("+e+" < "+(g+"_"+B.f.bV(s,4)+("."+"xyzw"[B.f.d0(s,4)]))+") {");++a.d
+a.cP("if ("+e+" < "+(g+"_"+B.f.bV(s,4)+("."+"xyzw"[B.f.cK(s,4)]))+") {");++a.d
 A.a7G(a,b,r,d,e,f,g);--a.d
-a.cO("} else {");++a.d
+a.cP("} else {");++a.d
 A.a7G(a,s,c,d,e,f,g);--a.d
-a.cO("}")}},
+a.cP("}")}},
 akG(a,b,c,d){var s,r,q,p,o
 if(d){a.addColorStop(0,"#00000000")
 s=0.999
@@ -1253,21 +1253,21 @@ q=A.c1(b[p])
 q.toString
 a.addColorStop(o*s+r,q)}if(d)a.addColorStop(1,"#00000000")},
 alX(a,b,c,d){var s,r,q,p,o,n="tiled_st"
-b.cO("vec4 bias;")
-b.cO("vec4 scale;")
+b.cP("vec4 bias;")
+b.cP("vec4 scale;")
 for(s=c.d,r=s-1,q=B.f.bV(r,4)+1,p=0;p<q;++p)a.hz(11,"threshold_"+p)
 for(p=0;p<s;++p){q=""+p
 a.hz(11,"bias_"+q)
-a.hz(11,"scale_"+q)}switch(d.a){case 0:b.cO("float tiled_st = clamp(st, 0.0, 1.0);")
+a.hz(11,"scale_"+q)}switch(d.a){case 0:b.cP("float tiled_st = clamp(st, 0.0, 1.0);")
 o=n
 break
 case 3:o="st"
 break
-case 1:b.cO("float tiled_st = fract(st);")
+case 1:b.cP("float tiled_st = fract(st);")
 o=n
 break
-case 2:b.cO("float t_1 = (st - 1.0);")
-b.cO("float tiled_st = abs((t_1 - 2.0 * floor(t_1 * 0.5)) - 1.0);")
+case 2:b.cP("float t_1 = (st - 1.0);")
+b.cP("float tiled_st = abs((t_1 - 2.0 * floor(t_1 * 0.5)) - 1.0);")
 o=n
 break
 default:o="st"}A.a7G(b,0,r,"bias",o,"scale","threshold")
@@ -1827,8 +1827,8 @@ f=A.a5s(h,new A.un(g))
 g=f.b
 o.push(g)
 if(g!==l){e=A.a8R(A.c0(J.b8(s.a(i.i(j,"inputType")),"name")),!1).uw()
-f.a.cP(e)
-f.cP(e)
+f.a.cQ(e)
+f.cQ(e)
 A.KO(e,!1)
 q.l(0,g,f)
 r.l(0,g,e)
@@ -6120,7 +6120,7 @@ return A.aaD(s,b.subarray(c,A.dx(c,d,b.length)))},
 aaD(a,b){var s,r
 try{s=a.decode(b)
 return s}catch(r){}return null},
-a8c(a,b,c,d,e,f){if(B.f.d0(f,4)!==0)throw A.d(A.bW("Invalid base64 padding, padded length must be multiple of four, is "+f,a,c))
+a8c(a,b,c,d,e,f){if(B.f.cK(f,4)!==0)throw A.d(A.bW("Invalid base64 padding, padded length must be multiple of four, is "+f,a,c))
 if(d+e!==f)throw A.d(A.bW("Invalid base64 padding, '=' not at the end",a,b))
 if(e>2)throw A.d(A.bW("Invalid base64 padding, more than two '=' characters",a,b))},
 a9e(a,b,c){return new A.ra(a,b)},
@@ -6564,14 +6564,14 @@ i=q[7]<a4
 if(i)if(n>o+3){h=a2
 i=!1}else{p=m>a4
 if(p&&m+1===l){h=a2
-i=!1}else{if(!B.c.cK(a3,"\\",l))if(n>a4)g=B.c.cK(a3,"\\",n-1)||B.c.cK(a3,"\\",n-2)
+i=!1}else{if(!B.c.cL(a3,"\\",l))if(n>a4)g=B.c.cL(a3,"\\",n-1)||B.c.cL(a3,"\\",n-2)
 else g=!1
 else g=!0
 if(g){h=a2
-i=!1}else{if(!(k<a5&&k===l+2&&B.c.cK(a3,"..",l)))g=k>l+2&&B.c.cK(a3,"/..",k-3)
+i=!1}else{if(!(k<a5&&k===l+2&&B.c.cL(a3,"..",l)))g=k>l+2&&B.c.cL(a3,"/..",k-3)
 else g=!0
 if(g){h=a2
-i=!1}else{if(o===a4+4)if(B.c.cK(a3,"file",a4)){if(n<=a4){if(!B.c.cK(a3,"/",l)){f="file:///"
+i=!1}else{if(o===a4+4)if(B.c.cL(a3,"file",a4)){if(n<=a4){if(!B.c.cL(a3,"/",l)){f="file:///"
 r=3}else{f="file://"
 r=2}a3=f+B.c.a_(a3,l,a5)
 o-=a4
@@ -6591,7 +6591,7 @@ s=1-a4
 k+=s
 j+=s
 a5=a3.length
-a4=0}h="file"}else if(B.c.cK(a3,"http",a4)){if(p&&m+3===l&&B.c.cK(a3,"80",m+1))if(a4===0&&!0){a3=B.c.kn(a3,m,l,"")
+a4=0}h="file"}else if(B.c.cL(a3,"http",a4)){if(p&&m+3===l&&B.c.cL(a3,"80",m+1))if(a4===0&&!0){a3=B.c.kn(a3,m,l,"")
 l-=3
 k-=3
 j-=3
@@ -6605,7 +6605,7 @@ k-=s
 j-=s
 a5=a3.length
 a4=0}h="http"}else h=a2
-else if(o===s&&B.c.cK(a3,"https",a4)){if(p&&m+4===l&&B.c.cK(a3,"443",m+1))if(a4===0&&!0){a3=B.c.kn(a3,m,l,"")
+else if(o===s&&B.c.cL(a3,"https",a4)){if(p&&m+4===l&&B.c.cL(a3,"443",m+1))if(a4===0&&!0){a3=B.c.kn(a3,m,l,"")
 l-=4
 k-=4
 j-=4
@@ -6695,12 +6695,12 @@ if(B.c.aK(a,s)!==93)A.p2(a,b,"Missing end `]` to match `[` in host")
 r=b+1
 q=A.aky(a,r,s)
 if(q<s){p=q+1
-o=A.abk(a,B.c.cK(a,"25",p)?q+3:p,s,"%25")}else o=""
+o=A.abk(a,B.c.cL(a,"25",p)?q+3:p,s,"%25")}else o=""
 A.aaC(a,r,q)
 return B.c.a_(a,b,q).toLowerCase()+o+"]"}for(n=b;n<c;++n)if(B.c.aK(a,n)===58){q=B.c.m6(a,"%",b)
 q=q>=b&&q<c?q:c
 if(q<c){p=q+1
-o=A.abk(a,B.c.cK(a,"25",p)?q+3:p,c,"%25")}else o=""
+o=A.abk(a,B.c.cL(a,"25",p)?q+3:p,c,"%25")}else o=""
 A.aaC(a,b,q)
 return"["+B.c.a_(a,b,q)+o+"]"}return A.akC(a,b,c)},
 aky(a,b,c){var s=B.c.m6(a,"%",b)
@@ -6894,7 +6894,7 @@ for(q=a.length,o=b;o<c;++o){r=B.c.a9(a,o)
 if(r>127)throw A.d(A.cF("Illegal percent encoding in URI",null))
 if(r===37){if(o+3>q)throw A.d(A.cF("Truncated URI",null))
 p.push(A.akz(a,o+1))
-o+=2}else p.push(r)}}return d.cT(0,p)},
+o+=2}else p.push(r)}}return d.cU(0,p)},
 aba(a){var s=a|32
 return 97<=s&&s<=122},
 aaB(a,b,c){var s,r,q,p,o,n,m,l,k="Invalid MIME type",j=A.a([b-1],t.t)
@@ -6906,7 +6906,7 @@ for(;p!==44;){j.push(r);++r
 for(o=-1;r<s;++r){p=B.c.a9(a,r)
 if(p===61){if(o<0)o=r}else if(p===59||p===44)break}if(o>=0)j.push(o)
 else{n=B.b.gJ(j)
-if(p!==44||r!==n+7||!B.c.cK(a,"base64",n+1))throw A.d(A.bW("Expecting '='",a,r))
+if(p!==44||r!==n+7||!B.c.cL(a,"base64",n+1))throw A.d(A.bW("Expecting '='",a,r))
 break}}j.push(r)
 m=r+1
 if((j.length&1)===1)a=B.va.WI(0,a,m,s)
@@ -11663,9 +11663,9 @@ else for(s=A.alh(b3,d,b4),r=s.length,a0=0;a0<s.length;s.length===r||(0,A.E)(s),+
 if(c)a2.aT(0)},
 alh(a,b,c){var s,r,q,p,o,n,m=b.c,l=b.a,k=m-l,j=b.d,i=b.b,h=j-i,g=c!==B.zE
 if(!g||c===B.zF){s=B.d.d7((a.a-l)/k)
-r=B.d.cR((a.c-m)/k)}else{s=0
+r=B.d.cS((a.c-m)/k)}else{s=0
 r=0}if(!g||c===B.zG){q=B.d.d7((a.b-i)/h)
-p=B.d.cR((a.d-j)/h)}else{q=0
+p=B.d.cS((a.d-j)/h)}else{q=0
 p=0}m=A.a([],t.f8)
 for(o=s;o<=r;++o)for(l=o*k,n=q;n<=p;++n)m.push(b.c5(new A.v(l,n*h)))
 return m},
@@ -11806,7 +11806,7 @@ _.w=!1
 _.x=b},
 aff(a){var s,r,q,p,o,n,m
 if(a==null)return new A.bE(null,t.rl)
-s=t.a.a(B.aK.cT(0,a))
+s=t.a.a(B.aK.cU(0,a))
 r=J.d8(s)
 q=t.N
 p=A.x(q,t.E4)
@@ -13810,7 +13810,7 @@ r=n!=null?B.bN.wC(n):B.bN}n=b.e
 if(n!=null&&b.r!=null){s=b.r
 s.toString
 n.toString
-r=r.wB(c.b-s-n)}a.cV(r,!0)
+r=r.wB(c.b-s-n)}a.cW(r,!0)
 q=b.w
 if(!(q!=null)){n=b.f
 s=a.k3
@@ -14208,7 +14208,7 @@ Zp:function Zp(a,b){this.b=a
 this.a=b},
 Se:function Se(a){this.a=a},
 YS:function YS(a){this.a=a},
-afe(a){return B.G.cT(0,A.cg(a.buffer,0,null))},
+afe(a){return B.G.cU(0,A.cg(a.buffer,0,null))},
 xD:function xD(){},
 M8:function M8(){},
 M9:function M9(a,b,c,d){var _=this
@@ -15333,7 +15333,7 @@ Gf:function Gf(){},
 I0:function I0(){},
 Kf:function Kf(){},
 Kg:function Kg(){},
-ak_(a){a.cS()
+ak_(a){a.cT()
 a.aU(A.a4D())},
 ags(a,b){var s,r,q,p=a.e
 p===$&&A.e()
@@ -17587,7 +17587,7 @@ xm(a,b,c){if(a==null||!1)return a===b
 return a>b-c&&a<b+c||a===b},
 afw(a,b){return a.fJ(b)},
 afx(a,b){var s
-a.cV(b,!0)
+a.cW(b,!0)
 s=a.k3
 s.toString
 return s},
@@ -18020,7 +18020,7 @@ if(r)l.clearRect(0,0,k.f*q,k.r*q)
 l.scale(A.ay()*q,A.ay()*q)
 k.R2()},
 yA(a,b){var s=this.as
-return A.anH(B.d.cR(a*s),B.d.cR(b*s))},
+return A.anH(B.d.cS(a*s),B.d.cS(b*s))},
 I(a){var s,r,q,p,o,n=this
 n.JW(0)
 if(n.y!=null){s=n.d
@@ -19113,7 +19113,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:j=t.jS.a(B.aK.cT(0,B.G.cT(0,A.cg(c.buffer,0,null))))
+case 6:j=t.jS.a(B.aK.cU(0,B.G.cU(0,A.cg(c.buffer,0,null))))
 if(j==null)throw A.d(A.ko(u.g))
 for(k=t.a,i=J.ct(j,k),i=new A.cS(i,i.gn(i)),h=t.j,g=A.r(i).c;i.q();){f=i.d
 if(f==null)f=g.a(f)
@@ -19250,7 +19250,7 @@ glZ(){return this.d},
 gpE(){return this.e},
 fK(){var s=this,r=s.gU(),q=A.bV(0,r.currentFrameDuration()),p=A.a8u(r.makeImageAtCurrentFrame(),null)
 r.decodeNextFrame()
-s.f=B.f.d0(s.f+1,s.d)
+s.f=B.f.cK(s.f+1,s.d)
 return A.cw(new A.po(q,p),t.eT)},
 $ier:1}
 A.pV.prototype={
@@ -19314,7 +19314,7 @@ case 3:j=b.image
 i=p.x
 h=p.f
 h===$&&A.e()
-p.x=B.f.d0(i+1,h)
+p.x=B.f.cK(i+1,h)
 h=$.b_.au()
 i=$.b_.au().AlphaType.Premul
 o=$.b_.au().ColorType.RGBA_8888
@@ -19716,7 +19716,7 @@ eF(a){this.gU().addRRect(A.kf(a),!1)},
 o6(a){this.gU().addRect(A.dl(a))},
 hF(a){this.gU().close()},
 u(a,b){return this.gU().contains(b.a,b.b)},
-d_(a){var s=this.gU().getBounds()
+d0(a){var s=this.gU().getBounds()
 return new A.A(s[0],s[1],s[2],s[3])},
 cv(a,b,c){this.gU().lineTo(b,c)},
 fz(a,b,c){this.gU().moveTo(b,c)},
@@ -19906,8 +19906,8 @@ s=l.y
 s.toString
 A.dt(s,j,l.d,!1)
 l.y.remove()
-l.d=l.e=null}l.z=B.d.cR(p.a)
-s=B.d.cR(p.b)
+l.d=l.e=null}l.z=B.d.cS(p.a)
+s=B.d.cS(p.b)
 l.Q=s
 o=l.y=A.xi(s,l.z)
 A.B(o,"setAttribute",["aria-hidden","true"])
@@ -19934,7 +19934,7 @@ if(s!==l.ay)l.tQ()}s=$.bP()
 n=s.w
 l.ay=n==null?A.ay():n
 l.ax=a
-m=B.d.cR(a.b)
+m=B.d.cS(a.b)
 n=l.Q
 s=s.w
 if(s==null)s=A.ay()
@@ -19967,7 +19967,7 @@ q.toString
 return r.nA(q,"Failed to initialize WebGL context")}else{q=$.b_.au()
 s=r.f
 s.toString
-s=q.MakeOnScreenGLSurface(s,B.d.cR(a.a),B.d.cR(a.b),self.window.flutterCanvasKit.ColorSpace.SRGB)
+s=q.MakeOnScreenGLSurface(s,B.d.cS(a.a),B.d.cS(a.b),self.window.flutterCanvasKit.ColorSpace.SRGB)
 if(s==null){q=r.y
 q.toString
 return r.nA(q,"Failed to initialize WebGL surface")}return new A.pZ(s,r.r)}}},
@@ -20854,7 +20854,7 @@ if(l!=null){e.bC(l,b)
 return}p=a.a
 k=p.ax?p.zI():null
 if(k!=null){e.bF(k,b)
-return}j=a.d_(0)
+return}j=a.d0(0)
 p=A.h(j.c)
 o=A.h(j.d)
 i=A.ac5()
@@ -20891,14 +20891,14 @@ p.toString
 g=p}f=b.x.b
 p=$.bF()
 if(p===B.y&&s!==B.E)A.k(i.style,"box-shadow","0px 0px "+A.h(f*2)+"px "+g)
-else A.k(i.style,"filter","blur("+A.h(f)+"px)")}e.kX(i,B.h,b)}else{s=b.w!=null?a.d_(0):null
+else A.k(i.style,"filter","blur("+A.h(f)+"px)")}e.kX(i,B.h,b)}else{s=b.w!=null?a.d0(0):null
 p=e.d
 p.gbI().ia(b,s)
 s=b.b
 if(s==null&&b.c!=null)p.ca(a,B.E)
 else p.ca(a,s)
 p.gbI().j0()}},
-fn(a,b,c,d){var s,r,q,p,o,n=this.d,m=A.amm(a.d_(0),c)
+fn(a,b,c,d){var s,r,q,p,o,n=this.d,m=A.amm(a.d0(0),c)
 if(m!=null){s=(B.d.b2(0.3*(b.gp(b)>>>24&255))&255)<<24|b.gp(b)&16777215
 r=A.amf(s>>>16&255,s>>>8&255,s&255,255)
 n.gao(n).save()
@@ -21201,7 +21201,7 @@ is(a){return this.oh(a,!0)},
 og(a,b,c){var s,r=this.a
 t.ei.a(b)
 s=new A.Bx(b)
-r.a.it(b.d_(0),s)
+r.a.it(b.d0(0),s)
 r.d.c=!0
 r.c.push(s)},
 eI(a,b){return this.og(a,b,!0)},
@@ -21249,7 +21249,7 @@ q.c.push(r)},
 ek(a,b){this.a.ek(a,b)},
 fn(a,b,c,d){var s,r,q=this.a
 q.e=q.d.c=!0
-s=A.aml(a.d_(0),c)
+s=A.aml(a.d0(0),c)
 r=new A.BJ(t.ei.a(a),b,c,d)
 q.a.j8(s,r)
 q.c.push(r)}}
@@ -21326,7 +21326,7 @@ A.t7.prototype={
 bw(a){return this.ot("flt-clippath")},
 f_(){var s=this
 s.II()
-if(s.cx!==B.C){if(s.w==null)s.w=s.CW.d_(0)}else s.w=null},
+if(s.cx!==B.C){if(s.w==null)s.w=s.CW.d0(0)}else s.w=null},
 dM(){var s=this,r=s.cy
 if(r!=null)r.remove()
 r=s.d
@@ -21738,7 +21738,7 @@ e.ch=!1
 e.CW=6}},
 u(a4,a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=this
 if(a3.a.w===0)return!1
-s=a3.d_(0)
+s=a3.d0(0)
 r=a5.a
 q=a5.b
 if(r<s.a||q<s.b||r>s.c||q>s.d)return!1
@@ -21816,10 +21816,10 @@ o.CW=p.CW
 r=new A.nZ(o,B.aB)
 r.zb(this)
 return r},
-d_(e2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,e0=this,e1=e0.a
+d0(e2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,e0=this,e1=e0.a
 if((e1.ax?e1.CW:-1)===-1)s=(e1.at?e1.CW:-1)!==-1
 else s=!0
-if(s)return e1.d_(0)
+if(s)return e1.d0(0)
 if(!e1.Q&&e1.b!=null){e1=e1.b
 e1.toString
 return e1}r=new A.l8(e1)
@@ -22017,7 +22017,7 @@ p=!0}else{o=Math.min(o,k)
 m=Math.max(m,j)
 n=Math.min(n,i)
 l=Math.max(l,h)}}d9=p?new A.A(o,n,m,l):B.w
-e0.a.d_(0)
+e0.a.d0(0)
 return e0.a.b=d9},
 h(a){var s=this.b4(0)
 return s}}
@@ -22153,7 +22153,7 @@ return new A.v(s[r],s[r+1])},
 x7(){var s=this
 if(s.ay)return new A.A(s.ef(0).a,s.ef(0).b,s.ef(1).a,s.ef(2).b)
 else return s.w===4?s.Mn():null},
-d_(a){var s
+d0(a){var s
 if(this.Q)this.ra()
 s=this.a
 s.toString
@@ -22181,7 +22181,7 @@ p=s[2]
 o=s[3]
 if(q===o||r===p)return new A.A(r,q,p,o)
 return null},
-zI(){var s,r,q,p,o,n,m,l,k,j,i,h,g=this.d_(0),f=A.a([],t.c0),e=new A.l8(this)
+zI(){var s,r,q,p,o,n,m,l,k,j,i,h,g=this.d0(0),f=A.a([],t.c0),e=new A.l8(this)
 e.kO(this)
 s=new Float32Array(8)
 e.hX(0,s)
@@ -22655,8 +22655,8 @@ k=k.d-k.b
 i=j*k
 h=c.dy
 g=self.window.devicePixelRatio
-if(l.r>=B.d.cR(s*(g===0?1:g))+2){g=self.window.devicePixelRatio
-f=l.w>=B.d.cR(r*(g===0?1:g))+2&&l.ay===h}else f=!1
+if(l.r>=B.d.cS(s*(g===0?1:g))+2){g=self.window.devicePixelRatio
+f=l.w>=B.d.cS(r*(g===0?1:g))+2&&l.ay===h}else f=!1
 e=i<n
 if(f&&e)if(!(e&&p&&i/q>4)){if(j===b&&k===a){o=l
 break}n=i
@@ -22781,7 +22781,7 @@ q=r.ax?r.zI():null
 if(q!=null){j.bF(q,b)
 return}}t.ei.a(a)
 if(a.a.w!==0){j.e=j.d.c=!0
-p=a.d_(0)
+p=a.d0(0)
 o=A.xb(b)
 if(o!==0)p=p.bN(o)
 r=a.a
@@ -23202,11 +23202,11 @@ h.toString
 return h}},
 Dg(c5,c6,c7){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8=this,b9="premultipliedAlpha",c0="u_resolution",c1="m_gradient",c2="attachShader",c3=c5.c,c4=c5.a
 c3-=c4
-s=B.d.cR(c3)
+s=B.d.cS(c3)
 r=c5.d
 q=c5.b
 r-=q
-p=B.d.cR(r)
+p=B.d.cS(r)
 if($.a7k==null)$.a7k=new A.a3b()
 o=$.a7T()
 o.b=!0
@@ -23270,8 +23270,8 @@ i.hz(11,"u_shift")
 m.push(new A.ls("v_color",11,3))
 h=new A.u0("main",A.a([],t.s))
 j.push(h)
-h.cO("gl_Position = ((u_ctransform * position) * u_scale) + u_shift;")
-h.cO("v_color = color.zyxw;")
+h.cP("gl_Position = ((u_ctransform * position) * u_scale) + u_shift;")
+h.cP("v_color = color.zyxw;")
 n=$.aaF=i.aD()}m=b8.e
 j=$.fB
 if(j==null)j=$.fB=A.x9()
@@ -23287,9 +23287,9 @@ e=i.Q
 if(e==null)e=i.Q=new A.ls(j?"gFragColor":"gl_FragColor",11,3)
 h=new A.u0("main",A.a([],t.s))
 f.push(h)
-h.cO("vec4 localCoord = m_gradient * vec4(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y, 0, 1);")
-h.cO("float st = localCoord.x;")
-h.cO(e.a+" = "+A.alX(i,h,k,m)+" * scale + bias;")
+h.cP("vec4 localCoord = m_gradient * vec4(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y, 0, 1);")
+h.cP("float st = localCoord.x;")
+h.cP(e.a+" = "+A.alX(i,h,k,m)+" * scale + bias;")
 d=i.aD()
 c=n+"||"+d
 b=J.b8(o.au(),c)
@@ -23405,7 +23405,7 @@ B.b.T(o.c,p)
 r.a+="}\n"}m=r.a
 return m.charCodeAt(0)==0?m:m}}
 A.u0.prototype={
-cO(a){this.c.push(a)}}
+cP(a){this.c.push(a)}}
 A.ls.prototype={}
 A.a4p.prototype={
 $2(a,b){var s,r=a.a,q=r.b*r.a
@@ -24200,7 +24200,7 @@ r=A.cg(b.buffer,b.byteOffset,b.byteLength)
 if(r[0]===7){q=r[1]
 if(q>=254)A.W(A.cp("Unrecognized message sent to dev.flutter/channel-buffers (method name too long)"))
 p=2+q
-o=B.G.cT(0,B.D.bj(r,2,p))
+o=B.G.cU(0,B.D.bj(r,2,p))
 switch(o){case"resize":if(r[p]!==12)A.W(A.cp(j))
 n=p+1
 if(r[n]<2)A.W(A.cp(j));++n
@@ -24208,7 +24208,7 @@ if(r[n]!==7)A.W(A.cp("Invalid arguments for 'resize' method sent to dev.flutter/
 m=r[n]
 if(m>=254)A.W(A.cp("Invalid arguments for 'resize' method sent to dev.flutter/channel-buffers (channel name must be less than 254 characters long)"));++n
 p=n+m
-l=B.G.cT(0,B.D.bj(r,n,p))
+l=B.G.cU(0,B.D.bj(r,n,p))
 if(r[p]!==3)A.W(A.cp("Invalid arguments for 'resize' method sent to dev.flutter/channel-buffers (second argument must be an integer in the range 0 to 2147483647)"))
 s.FJ(0,l,b.getUint32(p+1,B.F===$.cE()))
 break
@@ -24219,11 +24219,11 @@ if(r[n]!==7)A.W(A.cp("Invalid arguments for 'overflow' method sent to dev.flutte
 m=r[n]
 if(m>=254)A.W(A.cp("Invalid arguments for 'overflow' method sent to dev.flutter/channel-buffers (channel name must be less than 254 characters long)"));++n
 s=n+m
-B.G.cT(0,B.D.bj(r,n,s))
+B.G.cU(0,B.D.bj(r,n,s))
 s=r[s]
 if(s!==1&&s!==2)A.W(A.cp("Invalid arguments for 'overflow' method sent to dev.flutter/channel-buffers (second argument must be a boolean)"))
 break
-default:A.W(A.cp("Unrecognized method '"+o+"' sent to dev.flutter/channel-buffers"))}}else{k=A.a(B.G.cT(0,r).split("\r"),t.s)
+default:A.W(A.cp("Unrecognized method '"+o+"' sent to dev.flutter/channel-buffers"))}}else{k=A.a(B.G.cU(0,r).split("\r"),t.s)
 if(k.length===3&&J.f(k[0],"resize"))s.FJ(0,k[1],A.eW(k[2],null))
 else A.W(A.cp("Unrecognized message "+A.h(k)+" sent to dev.flutter/channel-buffers."))}}finally{c.$1(null)}else $.xq().Fo(a,b,c)},
 Ru(a,b,c){var s,r,q,p,o,n,m,l,k,j,i=this
@@ -24234,7 +24234,7 @@ q=A.jS().a
 q.w=r
 q.BH()}i.dB(c,B.B.bm([A.a([!0],t.sj)]))
 break}return
-case"flutter/assets":p=B.G.cT(0,A.cg(b.buffer,0,null))
+case"flutter/assets":p=B.G.cU(0,A.cg(b.buffer,0,null))
 $.a3t.cc(0,p).e0(new A.P4(i,c),new A.P5(i,c),t.P)
 return
 case"flutter/platform":s=B.W.eJ(b)
@@ -25841,7 +25841,7 @@ h(a){return A.z(this).h(0)+"("+this.a+", "+A.h(this.b)+")"}}
 A.Rn.prototype={
 bm(a){return A.i8(B.bl.dr(B.aK.uZ(a)).buffer,0,null)},
 dP(a){if(a==null)return a
-return B.aK.cT(0,B.bK.dr(A.cg(a.buffer,0,null)))}}
+return B.aK.cU(0,B.bK.dr(A.cg(a.buffer,0,null)))}}
 A.Rp.prototype={
 eO(a){return B.B.bm(A.aO(["method",a.a,"args",a.b],t.N,t.z))},
 eJ(a){var s,r,q,p=null,o=B.B.dP(a)
@@ -26002,7 +26002,7 @@ B.aL.co(0,s,c)
 B.aL.co(0,s,b)
 return s.hI()}}
 A.ZW.prototype={
-ho(a){var s,r,q=this.b,p=B.f.d0(q.b,a)
+ho(a){var s,r,q=this.b,p=B.f.cK(q.b,a)
 if(p!==0)for(s=a-p,r=0;r<s;++r)q.cs(0,0)},
 hI(){var s,r
 this.a=!0
@@ -26019,7 +26019,7 @@ q1(a){var s
 this.ho(8)
 s=this.a
 B.qH.CE(s.buffer,s.byteOffset+this.b,a)},
-ho(a){var s=this.b,r=B.f.d0(s,a)
+ho(a){var s=this.b,r=B.f.cK(s,a)
 if(r!==0)this.b=s+(a-r)}}
 A.YH.prototype={}
 A.D_.prototype={}
@@ -26321,7 +26321,7 @@ s=6
 break
 case 3:s=2
 break
-case 6:j=t.jS.a(B.aK.cT(0,B.G.cT(0,A.cg(a4.buffer,0,null))))
+case 6:j=t.jS.a(B.aK.cU(0,B.G.cU(0,A.cg(a4.buffer,0,null))))
 if(j==null)throw A.d(A.ko(u.g))
 if($.a80())n.a=A.agT()
 else n.a=new A.HQ(A.a([],t.iJ))
@@ -27104,7 +27104,7 @@ if(a instanceof q){if(r!=null)a.placeholder=r
 q=s==null
 if(!q){a.name=s
 a.id=s}A.B(a,"setAttribute",["autocomplete",q?"on":s])}}},
-cP(a){return this.CD(a,!1)}}
+cQ(a){return this.CD(a,!1)}}
 A.o7.prototype={}
 A.mF.prototype={
 FV(){var s=this
@@ -27118,7 +27118,7 @@ if(A.z(s)!==J.P(b))return!1
 return b instanceof A.mF&&b.a==s.a&&b.b===s.b&&b.c===s.c&&b.d==s.d&&b.e==s.e},
 h(a){var s=this.b4(0)
 return s},
-cP(a){var s=this,r="setSelectionRange",q=self.window.HTMLInputElement
+cQ(a){var s=this,r="setSelectionRange",q=self.window.HTMLInputElement
 q.toString
 if(a instanceof q){a.toString
 a.value=s.a
@@ -27135,18 +27135,18 @@ A.Am.prototype={
 eZ(){var s,r=this,q=r.w
 if(q!=null){s=r.c
 s.toString
-q.cP(s)}q=r.d
+q.cQ(s)}q=r.d
 q===$&&A.e()
 if(q.w!=null){r.mp()
 q=r.e
-if(q!=null)q.cP(r.c)
+if(q!=null)q.cQ(r.c)
 r.gDY().focus()
 r.c.focus()}}}
 A.VH.prototype={
 eZ(){var s,r=this,q=r.w
 if(q!=null){s=r.c
 s.toString
-q.cP(s)}q=r.d
+q.cQ(s)}q=r.d
 q===$&&A.e()
 if(q.w!=null){r.mp()
 r.gDY().focus()
@@ -27154,7 +27154,7 @@ r.c.focus()
 q=r.e
 if(q!=null){s=r.c
 s.toString
-q.cP(s)}}},
+q.cQ(s)}}},
 oY(){if(this.w!=null)this.eZ()
 this.c.focus()}}
 A.qg.prototype={
@@ -27197,7 +27197,7 @@ A.k(r,"caret-color",o)
 s=p.r
 if(s!=null){r=p.c
 r.toString
-s.cP(r)}s=p.d
+s.cQ(r)}s=p.d
 s===$&&A.e()
 if(s.w==null){s=$.fC.z
 s.toString
@@ -27255,7 +27255,7 @@ wP(a){var s
 this.r=a
 if(this.b){s=this.c
 s.toString
-a.cP(s)}},
+a.cQ(s)}},
 fk(a){var s,r,q,p,o,n=this,m=null
 n.b=!1
 n.w=n.r=n.f=n.e=null
@@ -27290,7 +27290,7 @@ this.e=a
 if(this.b)s=!(a.b>=0&&a.c>=0)
 else s=!0
 if(s)return
-a.cP(this.c)},
+a.cQ(this.c)},
 eZ(){this.c.focus()},
 mp(){var s,r=this.d
 r===$&&A.e()
@@ -27417,7 +27417,7 @@ this.c.focus()
 s=this.w
 if(s!=null){r=this.c
 r.toString
-s.cP(r)}}}
+s.cQ(r)}}}
 A.QQ.prototype={
 $1(a){this.a.Bc()},
 $S:1}
@@ -27480,7 +27480,7 @@ this.c.focus()
 s=this.w
 if(s!=null){r=this.c
 r.toString
-s.cP(r)}}}
+s.cQ(r)}}}
 A.Ly.prototype={
 $1(a){var s=this.a
 if(self.document.hasFocus())s.c.focus()
@@ -27526,10 +27526,10 @@ q.c.focus()
 s=q.w
 if(s!=null){r=q.c
 r.toString
-s.cP(r)}s=q.e
+s.cQ(r)}s=q.e
 if(s!=null){r=q.c
 r.toString
-s.cP(r)}}}
+s.cQ(r)}}}
 A.Pr.prototype={
 $1(a){this.a.E5(a)},
 $S:1}
@@ -27667,12 +27667,12 @@ s=s.b
 $.at().eW("flutter/textinput",B.W.eO(new A.eE("TextInputClient.performAction",[s,a])),A.KN())},
 $S:141}
 A.ON.prototype={
-cP(a){var s=this,r=a.style,q=A.anz(s.d,s.e)
+cQ(a){var s=this,r=a.style,q=A.anz(s.d,s.e)
 q.toString
 A.k(r,"text-align",q)
 A.k(r,"font",s.b+" "+A.h(s.a)+"px "+A.h(A.a4o(s.c)))}}
 A.OM.prototype={
-cP(a){var s=A.eV(this.c),r=a.style
+cQ(a){var s=A.eV(this.c),r=a.style
 A.k(r,"width",A.h(this.a)+"px")
 A.k(r,"height",A.h(this.b)+"px")
 A.k(r,"transform",s)}}
@@ -28261,7 +28261,7 @@ de(a){var s
 if(a>=-2147483648&&a<=2147483647)return a|0
 if(isFinite(a)){s=a<0?Math.ceil(a):Math.floor(a)
 return s+0}throw A.d(A.R(""+a+".toInt()"))},
-cR(a){var s,r
+cS(a){var s,r
 if(a>=0){if(a<=2147483647){s=a|0
 return a===s?s:s+1}}else if(a>=-2147483648)return a|0
 r=Math.ceil(a)
@@ -28308,7 +28308,7 @@ return((p*9007199254740992|0)+(p*3542243181176521|0))*599197+r*1259&536870911},
 S(a,b){return a+b},
 W(a,b){return a-b},
 V(a,b){return a*b},
-d0(a,b){var s=a%b
+cK(a,b){var s=a%b
 if(s===0)return 0
 if(s>0)return s
 if(b<0)return s-b
@@ -28363,12 +28363,12 @@ He(a,b){var s=A.a(a.split(b),t.s)
 return s},
 kn(a,b,c,d){var s=A.dx(b,c,a.length)
 return A.acL(a,b,s,d)},
-cK(a,b,c){var s
+cL(a,b,c){var s
 if(c<0||c>a.length)throw A.d(A.bq(c,0,a.length,null,null))
 s=c+b.length
 if(s>a.length)return!1
 return b===a.substring(c,s)},
-bv(a,b){return this.cK(a,b,0)},
+bv(a,b){return this.cL(a,b,0)},
 a_(a,b,c){return a.substring(b,A.dx(b,c,a.length))},
 dG(a,b){return this.a_(a,b,null)},
 XL(a){return a.toLowerCase()},
@@ -30945,13 +30945,13 @@ q=l
 continue}}throw A.d(A.bW("Invalid base64 data",b,r))}if(p!=null){g=p.a+=B.c.a_(b,q,a1)
 f=g.length
 if(o>=0)A.a8c(b,n,a1,o,m,f)
-else{e=B.f.d0(f-1,4)+1
+else{e=B.f.cK(f-1,4)+1
 if(e===1)throw A.d(A.bW(c,b,a1))
 for(;e<4;){g+="="
 p.a=g;++e}}g=p.a
 return B.c.kn(b,a0,a1,g.charCodeAt(0)==0?g:g)}d=a1-a0
 if(o>=0)A.a8c(b,n,a1,o,m,d)
-else{e=B.f.d0(d,4)
+else{e=B.f.cK(d,4)
 if(e===1)throw A.d(A.bW(c,b,a1))
 if(e>1)b=B.c.kn(b,a1,a1,e===2?"==":"=")}return b}}
 A.LU.prototype={}
@@ -30964,7 +30964,7 @@ return(this.b!=null?"Converting object to an encodable object failed:":"Converti
 A.AD.prototype={
 h(a){return"Cyclic error in JSON stringify"}}
 A.AC.prototype={
-cT(a,b){var s=A.alL(b,this.gTZ().a)
+cU(a,b){var s=A.alL(b,this.gTZ().a)
 return s},
 Uj(a,b){if(b==null)b=null
 if(b==null)return A.aaT(a,this.goF().b,null)
@@ -31091,7 +31091,7 @@ gAJ(){var s=this.c.a
 return s.charCodeAt(0)==0?s:s}}
 A.Es.prototype={
 TX(a,b,c){return(c===!0?B.L4:B.bK).dr(b)},
-cT(a,b){return this.TX(a,b,null)},
+cU(a,b){return this.TX(a,b,null)},
 goF(){return B.bl}}
 A.ZQ.prototype={
 dr(a){var s,r,q=A.dx(0,null,a.length),p=q-0
@@ -31680,7 +31680,7 @@ return s<r?B.c.a_(this.a,s+1,r):""},
 gE1(){var s=this.r,r=this.a
 return s<r.length?B.c.dG(r,s+1):""},
 gkh(){var s,r,q=this.e,p=this.f,o=this.a
-if(B.c.cK(o,"/",q))++q
+if(B.c.cL(o,"/",q))++q
 if(q===p)return B.c8
 s=A.a([],t.s)
 for(r=q;r<p;++r)if(B.c.aK(o,r)===47){s.push(B.c.a_(o,q,r))
@@ -32996,29 +32996,28 @@ A.ES.prototype={}
 A.B7.prototype={
 N(a){return new A.rx(B.DX,"Cbot \ud83d\udc23\ud83d\udc93",A.aar(null,B.DI,null),!1,null)}}
 A.rK.prototype={
-ae(){var s=A.C8(new A.cn(Date.now(),!1))===10&&A.C7(new A.cn(Date.now(),!1))===25?"Happy Birthday!! Gayauuu for everything, I always support you dik!!\ud83d\ude01\ud83d\ude24\ud83d\ude38\u2764":"Keep the Smile, You Worth It.",r=A.C8(new A.cn(Date.now(),!1))===10&&A.C7(new A.cn(Date.now(),!1))===25?13:12,q=t.s
-return new A.vH(s,r,A.a(["\u4ee5\u81ea\u5df1\u559c\u6b61\u7684\u65b9\u5f0f\u904e\u4e00\u751f\uff0c\u5c31\u662f\u4e00\u500b\u4eba\u6085\u7d0d\u81ea\u5df1\u4e14\u611b\u81ea\u5df1\u7684\u7d42\u6975\u8868\u73fe\u3002","\u4e0d\u8981\u70ba\u4e86\u8fce\u5408\u5225\u4eba\u800c\u52c9\u5f37\u81ea\u5df1\u53bb\u505a\u4e0d\u559c\u6b61\u7684\u4e8b\u60c5\uff0c\u56e0\u70ba\u9019\u6a23\u7684\u4f60\uff0c\u4e0d\u662f\u771f\u6b63\u5730\u5feb\u6a02\u3002","\u6700\u7d42\u6c7a\u5b9a\u4f60\u80fd\u8d70\u591a\u9060\u3001\u80fd\u904e\u4ec0\u9ebc\u6a23\u751f\u6d3b\u7684\uff0c\u662f\u4f60\u81ea\u5df1\u3002","\u50cf\u611b\u4f60\u611b\u7684\u4eba\u4e00\u6a23\u53bb\u611b\u81ea\u5df1\uff0c\u7136\u5f8c\u52aa\u529b\u6d3b\u6210\u81ea\u5df1\u60f3\u8981\u7684\u6a23\u5b50\u3002","\u5225\u653e\u68c4\u2015\u2015 \u8b93\u4f60\u8870\u8001\u7684\u4e0d\u662f\u5e74\u9f61\uff0c\u662f\u5c0d\u7406\u60f3\u7684\u653e\u68c4\u3002","\u5982\u679c\u4f60\u6b63\u5728\u9ed1\u6697\u4e2d\u6478\u7d22\uff0c\u770b\u4e0d\u6e05\u524d\u884c\u7684\u8def\u9014\uff0c\u4e0d\u8981\u653e\u68c4\uff0c\u5805\u6301\u8d70\u4e0b\u53bb\uff0c\u56e0\u70ba\u592a\u967d\u7e3d\u6703\u51fa\u4f86\uff0c\u5929\u7e3d\u6703\u4eae\uff0c\u8ff7\u9727\u4e5f\u7e3d\u6703\u6563\u53bb\uff0c\u6700\u7d42\uff0c\u7b49\u5f85\u4f60\u7684\u5c07\u662f\u5eb7\u838a\u5927\u9053\u3002","\u505a\u4f60\u559c\u6b61\u7684\u4e8b\uff0c\u547d\u904b\u6703\u9ad8\u8208\u5730\u5e6b\u4f60\u6253\u958b\u6210\u529f\u4e4b\u9580\uff0c\u54ea\u6015\u4f60\u73fe\u5728\u5df2\u7d93\u516b\u5341\u6b72\u4e86\u3002","\u4f60\u6700\u9858\u610f\u505a\u7684\u90a3\u4ef6\u4e8b\uff0c\u5c31\u662f\u4f60\u771f\u6b63\u7684\u5929\u8ce6\u6240\u5728\u3002","\u6642\u9593\u548c\u7406\u60f3\u662f\u6700\u516c\u5e73\u7684\uff0c\u6642\u9593\u6703\u70ba\u61c2\u5f97\u71b1\u611b\u5b83\u3001\u73cd\u60dc\u5b83\u7684\u4eba\u800c\u6c38\u6046\uff0c\u7406\u60f3\u5247\u6703\u5782\u9752\u90a3\u4e9b\u6c38\u4e0d\u8a00\u68c4\u7684\u4eba\u3002","\u505a\u4f60\u559c\u6b61\u7684\u4e8b\uff0c\u547d\u904b\u6703\u9ad8\u8208\u5730\u5e6b\u4f60\u6253\u958b\u6210\u529f\u4e4b\u9580\u3002","\u4e0d\u518d\u8ffd\u8457\u5225\u4eba\u53e3\u4e2d\u7684\u6f6e\u6d41\u8d70\uff0c\u66f4\u7be4\u5b9a\u5805\u6301\u81ea\u5df1\u771f\u6b63\u559c\u6b61\u7684\u3002","\u8207\u5176\u628a\u5225\u4eba\u773c\u4e2d\u7684\u5b8c\u7f8e\u4eba\u751f\u7576\u4f5c\u8056\u7d93\uff0c\u4e0d\u5982\u4fe1\u4ef0\u81ea\u5df1\u5b9a\u7fa9\u7684\u81ea\u7531\u3002","\u628a\u6642\u9593\u82b1\u8cbb\u5728\u6709\u610f\u7fa9\u7684\u7fd2\u6163\u4e0a\uff0c\u80fd\u6539\u8b8a\u6211\u5011\u751f\u547d\u7684\u8cea\u5730\u3002","\u53ea\u6709\u771f\u6b63\u71b1\u611b\uff0c\u624d\u80fd\u65e5\u5fa9\u4e00\u65e5\u9577\u4e45\u5730\u5805\u6301\u4e0b\u53bb\u3002","\u6c92\u6709\u76ee\u6a19\u7684\u52aa\u529b\u53eb\u5fd9\u788c\uff0c\u6709\u76ee\u6a19\u7684\u52aa\u529b\u624d\u53eb\u596e\u9b25\u3002","\u8207\u9060\u65b9\u7684\u58ef\u9e97\u98a8\u666f\u76f8\u6bd4\uff0c\u6211\u5011\u6bcf\u5929\u9ad4\u9a57\u5230\u7684\uff0c\u624d\u662f\u503c\u5f97\u7d00\u5ff5\u7684\u91cd\u8981\u5c0f\u4e8b\u3002","\u505a\u6cd5\u5343\u842c\u7a2e\uff0c\u800c\u4f60\u8981\u6709\u81ea\u5df1\u7684\u6a19\u6e96\u3002","\u6b72\u6708\u62b5\u4e0d\u904e\u7684\uff0c\u662f\u4e00\u9846\u597d\u597d\u751f\u6d3b\u7684\u5fc3\u3002","\u73fe\u5728\u7684\u4e00\u5207\uff0c\u90fd\u662f\u5c0d\u672a\u4f86\u7684\u52a0\u5195\u3002","\u4f60\u8981\u7684\u7b54\u6848\uff0c\u53ea\u80fd\u81ea\u5df1\u5c0b\u627e\u3002","\u6709\u6642\u5019\uff0c\u4f60\u5f97\u505c\u4e00\u4e0b\u8173\u6b65\uff0c\u7b49\u4e00\u7b49\u5fc3\u9748\uff0c\u8b93\u5fc3\u60c5\u5e73\u548c\uff0c\u60f3\u4e00\u60f3\u81ea\u5df1\u751f\u6d3b\u4e2d\u64c1\u6709\u7684\u6240\u6709\u7f8e\u597d\u7684\u6771\u897f\u3002","\u6211\u4e0d\u6015\u5343\u842c\u4eba\u963b\u64cb\uff0c\u53ea\u6015\u81ea\u5df1\u6295\u964d\u3002","\u8b93\u6211\u5011\u8981\u5c07\u4e8b\u524d\u7684\u6182\u616e\uff0c\u63db\u70ba\u4e8b\u524d\u7684\u601d\u8003\u548c\u8a08\u756b\u5427\uff01","\u518d\u9577\u7684\u8def\uff0c\u6162\u6162\u8d70\u4e00\u6b65\u6b65\u4e5f\u80fd\u8d70\u5b8c\uff0c\u518d\u77ed\u7684\u8def\uff0c\u4e0d\u9081\u958b\u96d9\u8173\u4e5f\u7121\u6cd5\u5230\u9054\u3002","\u4e0d\u8981\u7b49\u5f85\u6a5f\u6703\uff0c\u800c\u662f\u8981\u5275\u9020\u6a5f\u6703\u3002","\u5f88\u591a\u5931\u6557\u4e0d\u662f\u56e0\u70ba\u80fd\u529b\u6709\u9650\uff0c\u800c\u662f\u56e0\u70ba\u6c92\u6709\u5805\u6301\u5230\u5e95\u3002","\u4e00\u500b\u4eba\u6700\u5927\u7684\u6575\u4eba\u662f\u81ea\u5df1\uff0c\u6c92\u6709\u5b8c\u4e0d\u6210\u7684\u4efb\u52d9\uff0c\u53ea\u6709\u5931\u53bb\u4fe1\u5fc3\u7684\u81ea\u5df1\u3002","\u6a5f\u6703\u4e0d\u6703\u4e3b\u52d5\u627e\u5230\u4f60\uff0c\u5fc5\u9808\u8981\u4e3b\u52d5\u4eae\u51fa\u4f60\u81ea\u5df1\u3002","\u62b1\u6700\u5927\u7684\u5e0c\u671b\uff0c\u76e1\u6700\u5927\u7684\u52aa\u529b\uff0c\u505a\u6700\u58de\u7684\u6253\u7b97\u3002","\u5225\u81ea\u5df1\u88fd\u9020\u58d3\u529b\uff0c\u6211\u5011\u6c92\u6709\u5fc5\u8981\u8ddf\u8457\u6642\u9593\u8d70\uff0c\u53ea\u9700\u8ddf\u8457\u5fc3\u614b\u548c\u80fd\u529b\u8d70\uff0c\u51e1\u4e8b\u96a8\u7de3\u3001\u76e1\u529b\u9054\u547d\u3001\u554f\u5fc3\u7121\u6127\uff0c\u5176\u4ed6\u7684\u4ea4\u7d66\u5929\u3002","\u5931\u6557\u662f\u4ec0\u9ebc\uff1f\u6c92\u6709\u4ec0\u9ebc\uff0c\u53ea\u662f\u66f4\u8d70\u8fd1\u6210\u529f\u4e00\u6b65\uff1b\u6210\u529f\u662f\u4ec0\u9ebc\uff1f\u5c31\u662f\u8d70\u904e\u4e86\u6240\u6709\u901a\u5411\u5931\u6557\u7684\u8def\uff0c\u53ea\u5269\u4e0b\u4e00\u689d\u8def\uff0c\u90a3\u5c31\u662f\u6210\u529f\u7684\u8def\u3002","\u4efb\u4f55\u7684\u9650\u5236\uff0c\u90fd\u662f\u5f9e\u81ea\u5df1\u7684\u5167\u5fc3\u958b\u59cb\u7684\u3002","\u751f\u6d3b\u4e00\u76f4\u90fd\u662f\u7f8e\u597d\u7684\uff0c\u96d6\u7136\u6709\u8f9b\u82e6\u7684\u5954\u6ce2\uff0c\u6709\u4eba\u60c5\u7684\u6de1\u6f20\uff0c\u4e5f\u6709\u5076\u723e\u7684\u78b0\u58c1\u548c\u53d7\u632b\uff0c\u6709\u8a31\u8a31\u591a\u591a\u7684\u75db\u548c\u4e0d\u5e78\uff0c\u7136\u800c\uff0c\u9019\u4e9b\u90fd\u4e0d\u80fd\u63a9\u98fe\u4e86\u751f\u6d3b\u7684\u7f8e\u597d\uff0c\u751f\u6d3b\u4e2d\u7e3d\u6709\u8a31\u591a\u503c\u5f97\u6211\u5011\u8ffd\u6c42\u548c\u56ae\u5f80\u7684\u6771\u897f\u3002","\u751f\u547d\u4e2d\uff0c\u597d\u591a\u7684\u4e8b\u662f\u9019\u6a23\uff0c\u751f\u6d3b\u4e2d\uff0c\u597d\u591a\u7684\u60c5\u662f\u9019\u6a23\uff0c\u6c92\u6709\u7406\u7531\uff0c\u4e5f\u7121\u9700\u7406\u7531\uff0c\u611b\u5c31\u662f\u611b\uff0c\u559c\u6b61\u5c31\u662f\u559c\u6b61\uff0c\u6c92\u6709\u7d50\u679c\uff0c\u4e5f\u7121\u9808\u7d50\u679c\uff0c\u5fc3\u7518\u60c5\u9858\uff0c\u7121\u6028\u7121\u6094\u3002","\u771f\u6b63\u6210\u529f\u7684\u4eba\u751f\uff0c\u4e0d\u5728\u65bc\u6210\u5c31\u7684\u5927\u5c0f\uff0c\u800c\u5728\u65bc\u4f60\u662f\u5426\u52aa\u529b\u5730\u53bb\u5be6\u73fe\u81ea\u6211\uff0c\u558a\u51fa\u81ea\u5df1\u7684\u8072\u97f3\uff0c\u8d70\u51fa\u5c6c\u65bc\u81ea\u5df1\u7684\u9053\u8def\u3002","\u4e0d\u8981\u70ba\u5c0f\u4e8b\u906e\u4f4f\u8996\u7dda\uff0c\u6211\u5011\u9084\u6709\u66f4\u5927\u7684\u4e16\u754c\u3002","\u5c31\u7b97\u8dd1\u6700\u5f8c\u4e00\u540d\u53c8\u600e\u6a23\uff0c\u81f3\u5c11\u6211\u53c8\u904b\u52d5\u7cbe\u795e\u3002\u800c\u4e14\u6211\u4e00\u5b9a\u6703\u8dd1\u5b8c\u5168\u7a0b\uff0c\u53ea\u8981\u8dd1\u5230\u7d42\u9ede\u6211\u5c31\u6210\u529f\u4e86!","\u5982\u679c\u4f60\u7684\u9762\u524d\u6709\u9670\u5f71\uff0c\u90a3\u662f\u56e0\u70ba\u4f60\u7684\u80cc\u5f8c\u6709\u967d\u5149\u3002","\u5f88\u591a\u6642\u5019\uff0c\u4e0d\u5feb\u6a02\u4e26\u4e0d\u662f\u56e0\u70ba\u5feb\u6a02\u7684\u689d\u4ef6\u6c92\u6709\u9f4a\u5099\uff0c\u800c\u662f\u56e0\u70ba\u751f\u6d3b\u5f97\u9084\u4e0d\u5920\u7c21\u55ae\u3002","\u4eba\u7684\u4e00\u751f\u4e2d\u4e0d\u53ef\u80fd\u6703\u4e00\u5e06\u98a8\u9806\uff0c\u7e3d\u6703\u9047\u5230\u4e00\u4e9b\u632b\u6298\uff0c\u7576\u4f60\u5c0d\u751f\u6d3b\u5931\u53bb\u4e86\u4fe1\u5fc3\u7684\u6642\u5019\uff0c\u4ed4\u7d30\u7684\u770b\u4e00\u770b\u3001\u597d\u597d\u56de\u60f3\u4e00\u4e0b\u4f60\u6240\u9047\u5230\u7684\u6700\u7f8e\u597d\u7684\u4e8b\u60c5\u5427\uff0c\u90a3\u6703\u8b93\u4f60\u611f\u89ba\u5230\u751f\u6d3b\u7684\u7f8e\u597d\u3002","\u5982\u679c\u751f\u6d3b\u8e39\u4e86\u4f60\u597d\u591a\u8173\uff0c\u5225\u5fd8\u4e86\u7d66\u5b83\u5169\u500b\u8033\u5149\uff0c\u53cd\u6297\u7e3d\u6bd4\u6d41\u6dda\u5f37\u3002","\u4e16\u4e0a\u6c92\u6709\u767d\u8cbb\u7684\u52aa\u529b\uff0c\u4e5f\u6c92\u6709\u78b0\u5de7\u7684\u6210\u529f\uff0c\u4e00\u5207\u7121\u5fc3\u63d2\u67f3\uff0c\u5176\u5be6\u90fd\u662f\u6c34\u5230\u6e20\u6210\u3002\u4eba\u751f\u6c92\u6709\u767d\u8d70\u7684\u8def\uff0c\u4e5f\u6c92\u6709\u767d\u5403\u7684\u82e6\uff0c\u8de8\u51fa\u53bb\u7684\u6bcf\u4e00\u6b65\uff0c\u90fd\u662f\u672a\u4f86\u7684\u57fa\u77f3\u8207\u92ea\u588a\u3002","\u6211\u4e0d\u53ea\u60f3\u5206\u4eab\u4f60\u7684\u958b\u5fc3\u5feb\u6a02\uff0c\u4e5f\u60f3\u5206\u64d4\u4f60\u7684\u7169\u60f1\u82e6\u60b6\uff0c\u7576\u4f60\u9700\u8981\u6211\u6642\uff0c\u6211\u6703\u4e00\u76f4\u5728\uff1b\u82e5\u4e0d\u9700\u8981\u6211\uff0c\u4e5f\u5225\u5fd8\u4e86\u9019\u4e16\u4e0a\u9084\u6709\u4e00\u500b\u6211\u5728\u9060\u65b9\u70ba\u4f60\u52a0\u6cb9\u6253\u6c23\u4e26\u4e14\u5e0c\u671b\u4f60\u5e78\u798f\u5b89\u597d\u3002","\u5982\u679c\u96e8\u5b63\u9072\u9072\u6c92\u6709\u7d50\u675f\uff0c\u6211\u6703\u966a\u4f60\u4e00\u8d77\u6dcb\u96e8\u3002","\u6211\u77e5\u9053\u4f60\u771f\u7684\u5f88\u52aa\u529b\u4e86\uff0c\u6211\u5011\u90fd\u6709\u770b\u5230\uff0c\u4f60\u771f\u7684\u771f\u7684\u5f88\u68d2\uff08\u6478\u982d\uff09","\u4e0d\u6015\uff01\u653e\u5fc3\uff0c\u4f60\u4e0d\u662f\u4e00\u500b\u4eba\u3002","\u9806\u5f9e\u81ea\u5df1\u7684\u5fc3\uff0c\u4ea4\u7d66\u6642\u9593\u53bb\u89e3\u6c7a\u5427","\u8981\u76f8\u4fe1\u4f60\u5f88\u68d2\uff0c\u4f60\u53ef\u4ee5\u597d\u597d\u4f11\u606f\u4e00\u4e0b\uff0c\u518d\u7e7c\u7e8c\u8d70\u3002","\u8ffd\u6c42\u76ee\u6a19\u7684\u8def\u9014\u4e0a\uff0c\u4e00\u5b9a\u6709\u611f\u5230\u75b2\u618a\u7121\u529b\u7684\u6642\u5019\uff0c\u8acb\u4e0d\u8981\u82db\u8cac\u81ea\u5df1\uff0c\u9069\u6642\u7684\u4f11\u606f\uff0c\u4e0d\u6703\u628a\u4f60\u5f9e\u8def\u9014\u4e0a\u6253\u56de\u539f\u9ede\uff0c\u4ed8\u51fa\u7684\u6642\u9593\u8207\u5fc3\u529b\u90fd\u4e0d\u6703\u767d\u8cbb\uff0c\u5b83\u5011\u662f\u7a2e\u5b50\uff0c\u800c\u4f60\u7684\u8010\u5fc3\u548c\u5805\u6301\u662f\u5b83\u5011\u7684\u967d\u5149\u8207\u6c34\uff0c\u9867\u597d\u81ea\u5df1\uff0c\u6301\u7e8c\u524d\u884c\uff0c\u7a2e\u5b50\u5fc5\u5c07\u958b\u82b1\u7d50\u679c\u3002","\u4f60\u96a8\u6642\u9700\u8981\uff0c\u6211\u90fd\u5728\uff0c\u9664\u975e\u6211\u7761\u8457\u3002","\u751f\u6d3b\u662f\u4e00\u9762\u93e1\u5b50\u3002\u4f60\u5c0d\u5b83\u7b11\uff0c\u5b83\u5c31\u5c0d\u4f60\u7b11\uff1b\u4f60\u5c0d\u5b83\u54ed\uff0c\u5b83\u4e5f\u5c0d\u4f60\u54ed\u3002","\u6d3b\u8457\u4e00\u5929\uff0c\u5c31\u662f\u6709\u798f\u6c23\uff0c\u5c31\u8a72\u73cd\u60dc\u3002\u7576\u6211\u54ed\u6ce3\u6211\u6c92\u6709\u978b\u5b50\u7a7f\u7684\u6642\u5019\uff0c\u6211\u767c\u73fe\u6709\u4eba\u537b\u6c92\u6709\u8173\u3002","\u6211\u5011\u5fc3\u4e2d\u7684\u6050\u61fc\uff0c\u6c38\u9060\u6bd4\u771f\u6b63\u7684\u5371\u96aa\u5de8\u5927\u7684\u591a\u3002","\u4e0d\u8981\u62ff\u5c0f\u4eba\u7684\u932f\u8aa4\u4f86\u61f2\u7f70\u81ea\u5df1\uff0c\u4e0d\u8981\u5728\u9019\u4e9b\u5fae\u4e0d\u8db3\u9053\u7684\u4e8b\u60c5\u4e0a\u6298\u78e8\u6d6a\u8cbb\u81ea\u5df1\u7684\u5bf6\u8cb4\u6642\u9593\u3002","\u5169\u500b\u4eba\u5171\u5617\u4e00\u500b\u75db\u82e6\u53ea\u6709\u534a\u500b\u75db\u82e6\uff0c\u5169\u500b\u4eba\u5171\u4eab\u4e00\u500b\u6b61\u6a02\u537b\u6709\u5169\u500b\u6b61\u6a02\u3002","\u4eba\u4e4b\u6240\u4ee5\u75db\u82e6\uff0c\u5728\u65bc\u8ffd\u6c42\u932f\u8aa4\u7684\u6771\u897f\u3002","\u5f97\u4e4b\u5766\u7136\uff0c\u5931\u4e4b\u6de1\u7136\uff0c\u9806\u5176\u81ea\u7136\uff0c\u722d\u5176\u5fc5\u7136\u3002","\u505a\u4e00\u500b\u6c7a\u5b9a\uff0c\u4e26\u4e0d\u96e3\uff0c\u96e3\u7684\u662f\u4ed8\u8af8\u884c\u52d5\uff0c\u4e26\u4e14\u5805\u6301\u5230\u5e95\u3002","\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u7a7f\u900f\u8ff7\u9727\uff1b\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u5805\u6301\u5230\u5e95\uff1b\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u5316\u89e3\u5371\u6a5f\uff1b\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u7167\u4eae\u9ed1\u6697\u3002","\u56f0\u96e3\u662f\u4e00\u584a\u9811\u77f3\uff0c\u5c0d\u65bc\u5f31\u8005\u5b83\u662f\u7d46\u8173\u77f3\uff0c\u5c0d\u65bc\u5f37\u8005\u5b83\u662f\u588a\u8173\u77f3\u3002","\u96d6\u7136\u6211\u5011\u7121\u6cd5\u6539\u8b8a\u4eba\u751f\uff0c\u4f46\u53ef\u4ee5\u6539\u8b8a\u4eba\u751f\u89c0\u3002\u96d6\u7136\u6211\u5011\u7121\u6cd5\u6539\u8b8a\u74b0\u5883\uff0c\u4f46\u6211\u5011\u53ef\u4ee5\u6539\u8b8a\u5fc3\u5883\u3002","\u7576\u4f60\u5feb\u6a02\u6642\uff0c\u4f60\u8981\u60f3\uff0c\u9019\u5feb\u6a02\u4e0d\u662f\u6c38\u6046\u7684\u3002\u7576\u4f60\u75db\u82e6\u6642\uff0c\u4f60\u8981\u60f3\uff0c\u9019\u75db\u82e6\u4e5f\u4e0d\u662f\u6c38\u6046\u7684\u3002","\u547d\u904b\u5c31\u50cf\u81ea\u5df1\u7684\u638c\u7d0b\uff0c\u96d6\u7136\u5f4e\u5f4e\u66f2\u66f2\uff0c\u537b\u6c38\u9060\u638c\u63e1\u5728\u81ea\u5df1\u624b\u4e2d\u3002","\u4eba\u662f\u53ef\u4ee5\u5feb\u6a02\u5730\u751f\u6d3b\u7684\uff0c\u53ea\u662f\u6211\u5011\u81ea\u5df1\u9078\u64c7\u4e86\u8907\u96dc\uff0c\u9078\u64c7\u4e86\u5606\u606f\uff01","\u4e0d\u7ba1\u5f9e\u4ec0\u9ebc\u6642\u5019\u958b\u59cb\uff0c\u91cd\u8981\u7684\u662f\u958b\u59cb\u4ee5\u5f8c\u4e0d\u8981\u505c\u6b62\uff1b\u4e0d\u7ba1\u5728\u4ec0\u9ebc\u6642\u5019\u7d50\u675f\uff0c\u91cd\u8981\u7684\u662f\u7d50\u675f\u4ee5\u5f8c\u4e0d\u8981\u5f8c\u6094\u3002","\u4f60\u4e0d\u80fd\u5de6\u53f3\u5929\u6c23\uff0c\u4f46\u53ef\u4ee5\u6539\u8b8a\u5fc3\u60c5\u3002\u4f60\u4e0d\u80fd\u6539\u8b8a\u5bb9\u8c8c\uff0c\u4f46\u53ef\u4ee5\u638c\u63e1\u81ea\u5df1\u3002\u4f60\u4e0d\u80fd\u9810\u898b\u660e\u5929\uff0c\u4f46\u53ef\u4ee5\u73cd\u60dc\u4eca\u5929\u3002","\u6210\u529f\u7684\u95dc\u9375\u5728\u65bc\u76f8\u4fe1\u81ea\u5df1\u6709\u6210\u529f\u7684\u80fd\u529b\u3002"],q),A.a(["\u6c92\u4e8b\u7684 \u7761\u4e00\u89ba\u5c31\u6703\u597d\u7684\u4e86","\u62b1\u62b1 \u6211\u966a\u7740\u4f60 (\u62b1)","(\u6478\u6478\u982d) \u6c92\u4e8b\u6c92\u4e8b \u4e0d\u54ed","(\u975c\u975c\u5730\u5728\u4f60\u65c1\u908a) ","\u6211\u4e5f\u4e00\u6a23...\u6211\u5011\u4e00\u8d77\u52a0\u6cb9\u5427!","\u597d\u597d\u4f11\u606f \u5feb\u53bb\u7761\u4e00\u56de","\u90a3\u8ddf\u6211\u8aaa\u8aaa\u5427 \u6211\u9858\u610f\u807d \u8aaa\u751a\u9ebc\u90fd\u53ef\u4ee5 \u60f3\u7f75\u5c31\u7f75 \u62b1\u6028\u5c31\u62b1\u6028 \u54ed\u5c31\u54ed\u5427 \u6211\u966a\u7740\u4f60\u5462","\u4f60\u662f\u5c0f\u5bf6\u5bf6 \u662f\u8ab0\u8b93\u4f60\u90a3\u9ebc\u7d2f \u6211\u53bb\u8ddf\u4ed6\u8aaa\u8aaa;(","\u4e0d\u7528\u52c9\u5f37\u81ea\u5df1\u7684 \u6c92\u6709\u4eba\u662f\u5b8c\u7f8e\u7684 \u9700\u8981\u4f11\u606f\u5c31\u53bb\u4f11\u606f\u5427 \u6c92\u95dc\u4fc2\u7684","(\u62cd\u62cd\u80a9\u8180) \u4f86 \u9760\u904e\u4f86\u7761\u4e00\u6703\u5152\u5427","\u7d2f\u4e86\u4e0d\u8981\u7dca \u77e5\u9053\u70ba\u751a\u9ebc\u55ce \u56e0\u70ba\u6211\u5728\u554a \u7d66\u4f60\u500b\u62b1\u62b1","\u5805\u6301\u4f4f \u5982\u679c\u5805\u6301\u4e0d\u4f4f\u5c31\u904e\u4f86 \u6211\u7d66\u4f60\u5145\u5145\u96fb (\u78c1..\u78c1...)","\u4f60\u559c\u6b61\u751a\u9ebc\u5c31\u505a\u751a\u9ebc \u5225\u7ba1\u5225\u4eba \u4f60\u505a\u4f60\u81ea\u5df1 \u5c31\u7b97\u6c92\u6709\u4eba\u8a8d\u540c\u4f60 \u6211\u8a8d\u540c\u4f60","\u6bcf\u4e00\u6b21\u77e5\u9053\u4f60\u5f88\u7d2f\u6211\u90fd\u5f88\u96e3\u904e \u5225\u59d4\u5c48\u4e86\u81ea\u5df1 \u597d\u55ce \u6211\u5e0c\u671b\u4f60\u5feb\u5feb\u6a02\u6a02\u7684","\u4f60\u77e5\u9053\u55ce \u6211\u5f88\u60f3\u73fe\u5728\u5c31\u5728\u4f60\u8eab\u908a \u6211\u4e0d\u5e0c\u671b\u4f60\u7d2f\u4e86\u537b\u6c92\u4eba\u75bc \u53ef\u662f\u65e2\u7136\u6211\u4e0d\u80fd \u5c31\u5e0c\u671b\u9019\u53e5: \u52a0\u6cb9!, \u53ef\u4ee5\u4ee4\u4f60\u611f\u89ba\u597d\u4e00\u9ede","\u7d2f\u4e86\u5c31\u770b\u4e00\u770b\u6708\u4eae\u5427 \u6709\u500b\u4eba\u5e0c\u671b\u4f60\u597d \u6240\u4ee5\u5225\u52c9\u5f37\u81ea\u5df1 \u8a18\u5f97\u597d\u597d\u4f11\u606f \u5feb\u53bb\u7761\u4e00\u89ba\u723d\u7684","(\u62b1\u62b1\xd7N)","Go to sleep ba, sleep ba, sleep ba Zzzz","Give you a hug ;) ","Everything's gonna be alright, no problem;)","When we got tired, lay down, take a rest. But of coarse, make sure you will stand up again, gayauu!","When it comes to days like this, just fxxk them, we mess up things, but so what?? haha we are still great people","I know it's tired, I know, and I am always here for you","The only utmost important thing you have to consider is loving yourself, other? Doesn't really matter a lot","Work hard, play hard, and remember to sleep hard too hehe","\u6216\u8a31\u6211\u5011\u90fd\u5f88\u5e73\u51e1 \u4f46\u6211\u5011\u90fd\u662f\u7368\u4e00\u7121\u4e8c\u7684 \u4e0d\u9700\u8981\u70ba\u4e86\u751a\u9ebc\u800c\u8981\u8b93\u81ea\u5df1\u96e3\u53d7\u548c\u7d2f \u9806\u5176\u81ea\u7136\u5c31\u597d\u4e86","We'll be alright, just take a rest","No problem, no matter how messy things are, it is gonna be alright, they are all minor things in our life","Pikachuuu~~ \u5145\u96fb\u6210\u529f!","Pika pika chuchuchuchuchuuuu~~~~~ 100%\u96fb\u91cf!!","I will stay by your side whenever you need it","You are doing super super good already, don't cry","\u7167\u9867\u597d\u81ea\u5df1 \u5225\u628a\u81ea\u5df1\u7d2f\u58de\u4e86"],q),A.a(["\u76e1\u529b\u4e86 \u5c31\u5225\u4e0d\u958b\u5fc3\u5587 \u4e0b\u6b21\u6539\u5c31\u597d\u4e86","\u54ed\u5427 \u6211\u5728\u9019\u966a\u7740\u4f60","(\u62b1\u62b1) T_T \u4e00\u8d77\u54ed\u5427","\u8ab0\u8b93\u4f60\u4e0d\u958b\u5fc3 \u544a\u8a34\u6211 \u6211\u5e6b\u4f60\u5728\u5fc3\u88e1\u9762\u7f75\u4ed6\u4e00\u5927\u9813 \u54fc","\u5225\u54ed\u561b \u4f60\u7b11\u8d77\u4f86\u6bd4\u8f03\u7f8e \u6211\u5f88\u5e0c\u671b\u4f60\u662f\u5feb\u6a02\u7684","\u4e0d\u54ed\u4e0d\u54ed \u4e0d\u7136\u5c31\u8ddf\u6211\u4e00\u6a23\u4e11\u4e86;p (\u96d6\u7136\u6211\u662f\u7121\u4efb\u6b61\u8fce\u7684\u5587hehe","\u5225\u4e0d\u958b\u5fc3 \u4f60\u9084\u6709\u6211! \u96d6\u7136\u6211\u6c92\u751a\u9ebc\u7528 \u4f46\u81f3\u5c11\u6211\u662f\u652f\u6301\u4f60\u7684","\u6211\u73fe\u5728\u4e5f\u4e0d\u958b\u5fc3 \u56e0\u70ba\u4f60\u4e0d\u958b\u5fc3 \u5feb\u9ede\u958b\u5fc3\u8d77\u4f86 \u6211\u5011\u53bb\u5403\u5403\u5403!","(\u7d66\u7d19\u5dfe) \u6c92\u4e8b\u7684 \u5f88\u5feb\u90fd\u6703\u904e\u53bb\u7684","\u8b93\u6642\u9593\u6c96\u6de1\u4e00\u5207\u5427 \u54ed\u904e\u4e86 \u5c31\u904e\u53bb\u4e86 \u90fd\u4e0d\u91cd\u8981\u4e86 (\u6211\u4f8b\u5916 \u6211\u9084\u662f\u5f88\u91cd\u8981\u7684:p)","\u4e56\u4e56 \u7761\u500b\u89ba\u5c31\u597d\u4e86 \u8a18\u5f97\u6700\u91cd\u8981\u9084\u662f\u81ea\u5df1 \u4e00\u5b9a\u8981\u5feb\u5feb\u6a02\u6a02!!","\u544a\u8a34\u6211\u600e\u9ebc\u4e86\u597d\u55ce \u6211\u64d4\u5fc3\u4f60...\u6211\u6709\u751a\u9ebc\u53ef\u4ee5\u70ba\u4f60\u505a\u7684\u55ce?","\u52a0\u6cb9 \u52a0\u6cb9\u52a0\u6cb9! \u751a\u9ebc\u8b93\u4f60\u4e0d\u958b\u5fc3\u7684 \u90fd\u6253\u57ae\u5b83!","\u597d\u597d\u6df1\u547c\u5438 \u5e73\u975c\u5167\u5fc3 \u751a\u9ebc\u4e5f\u5225\u60f3 \u5c31\u657812345...","\u501f\u4f60\u80a9\u8180 \u9760\u904e\u4f86\u5427 \u6211\u966a\u7740\u4f60","\u5176\u5be6\u6211\u5514\u4fc2\u597d\u8b58\u5b89\u6170\u4eba... \u4f60\u9084\u597d\u55ce\u2026? \u4e0d\u597d\u7684\u8a71\u600e\u9ebc\u8fa6...\u6211\u53ef\u4ee5\u53bb\u4f60\u8eab\u908a\u55ce\u2026? \u4f60\u9700\u8981\u6211\u7684\u8a71 \u6211\u90fd\u6703\u52aa\u529b\u5728","\u50bb\u74dc \u4e0d\u503c\u5f97 \u4f60\u8981\u597d\u597d\u611b\u81ea\u5df1\u554a \u5176\u4ed6\u90fd\u4e0d\u91cd\u8981 (\u5305\u62ec\u6211) \u4f60\u5feb\u6a02\u5c31\u597d \u5225\u59d4\u5c48\u81ea\u5df1","\u6c92\u4e8b\u7684 \u90fd\u6703\u597d\u7684 \u9019\u53ea\u4e0d\u904e\u662f\u77ed\u66ab\u7684\u4e00\u500b\u5751 \u6211\u5011\u90fd\u80fd\u8de8\u904e\u53bb\u7684!"],q),A.a(["https://www.instagram.com/reel/CjUzWebrfCX/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CTzGVCVKe3Z/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CTwbDYdAZiy/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CTiiZILhmeE/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CTrRvQ5AM6b/?igshid=YmMyMTA2M2Y="],q),B.l)}}
+ae(){var s="The way I see it, if you want the rainbow, you gotta put up with the rain.",r="Be the reason someone smiles. Be the reason someone feels loved and believes in the goodness in people.",q="\u6a5f\u6703\u4e0d\u6703\u4e3b\u52d5\u627e\u5230\u4f60\uff0c\u5fc5\u9808\u8981\u4e3b\u52d5\u4eae\u51fa\u4f60\u81ea\u5df1\u3002",p="\u5931\u6557\u662f\u4ec0\u9ebc\uff1f\u6c92\u6709\u4ec0\u9ebc\uff0c\u53ea\u662f\u66f4\u8d70\u8fd1\u6210\u529f\u4e00\u6b65\uff1b\u6210\u529f\u662f\u4ec0\u9ebc\uff1f\u5c31\u662f\u8d70\u904e\u4e86\u6240\u6709\u901a\u5411\u5931\u6557\u7684\u8def\uff0c\u53ea\u5269\u4e0b\u4e00\u689d\u8def\uff0c\u90a3\u5c31\u662f\u6210\u529f\u7684\u8def\u3002",o="\u4e0d\u8981\u70ba\u5c0f\u4e8b\u906e\u4f4f\u8996\u7dda\uff0c\u6211\u5011\u9084\u6709\u66f4\u5927\u7684\u4e16\u754c\u3002",n="I realized that I don\u2019t have to be perfect. All I have to do is show up and enjoy the messy, imperfect, and beautiful journey of my life.",m=A.C8(new A.cn(Date.now(),!1))===10&&A.C7(new A.cn(Date.now(),!1))===25?"Happy Birthday!! Gayauuu for everything, I always support you dik!!\ud83d\ude01\ud83d\ude24\ud83d\ude38\u2764":"Keep the Smile, You Worth It.",l=A.C8(new A.cn(Date.now(),!1))===10&&A.C7(new A.cn(Date.now(),!1))===25?13:12,k=t.s
+return new A.vH(m,l,A.a(["\u4ee5\u81ea\u5df1\u559c\u6b61\u7684\u65b9\u5f0f\u904e\u4e00\u751f\uff0c\u5c31\u662f\u4e00\u500b\u4eba\u6085\u7d0d\u81ea\u5df1\u4e14\u611b\u81ea\u5df1\u7684\u7d42\u6975\u8868\u73fe\u3002","Every moment is a fresh beginning.","\u4e0d\u8981\u70ba\u4e86\u8fce\u5408\u5225\u4eba\u800c\u52c9\u5f37\u81ea\u5df1\u53bb\u505a\u4e0d\u559c\u6b61\u7684\u4e8b\u60c5\uff0c\u56e0\u70ba\u9019\u6a23\u7684\u4f60\uff0c\u4e0d\u662f\u771f\u6b63\u5730\u5feb\u6a02\u3002","When you arise in the morning, think of what a precious privilege it is to be alive, to breathe, to think, to enjoy, to love.","\u6700\u7d42\u6c7a\u5b9a\u4f60\u80fd\u8d70\u591a\u9060\u3001\u80fd\u904e\u4ec0\u9ebc\u6a23\u751f\u6d3b\u7684\uff0c\u662f\u4f60\u81ea\u5df1\u3002",s,"\u50cf\u611b\u4f60\u611b\u7684\u4eba\u4e00\u6a23\u53bb\u611b\u81ea\u5df1\uff0c\u7136\u5f8c\u52aa\u529b\u6d3b\u6210\u81ea\u5df1\u60f3\u8981\u7684\u6a23\u5b50\u3002","Do not let making a living prevent you from making a life.","\u5225\u653e\u68c4\u2015\u2015 \u8b93\u4f60\u8870\u8001\u7684\u4e0d\u662f\u5e74\u9f61\uff0c\u662f\u5c0d\u7406\u60f3\u7684\u653e\u68c4\u3002","Life is like riding a bicycle. To keep your balance, you must keep moving.","\u5982\u679c\u4f60\u6b63\u5728\u9ed1\u6697\u4e2d\u6478\u7d22\uff0c\u770b\u4e0d\u6e05\u524d\u884c\u7684\u8def\u9014\uff0c\u4e0d\u8981\u653e\u68c4\uff0c\u5805\u6301\u8d70\u4e0b\u53bb\uff0c\u56e0\u70ba\u592a\u967d\u7e3d\u6703\u51fa\u4f86\uff0c\u5929\u7e3d\u6703\u4eae\uff0c\u8ff7\u9727\u4e5f\u7e3d\u6703\u6563\u53bb\uff0c\u6700\u7d42\uff0c\u7b49\u5f85\u4f60\u7684\u5c07\u662f\u5eb7\u838a\u5927\u9053\u3002","Some people dream of success, while other people get up every morning and make it happen.","\u505a\u4f60\u559c\u6b61\u7684\u4e8b\uff0c\u547d\u904b\u6703\u9ad8\u8208\u5730\u5e6b\u4f60\u6253\u958b\u6210\u529f\u4e4b\u9580\uff0c\u54ea\u6015\u4f60\u73fe\u5728\u5df2\u7d93\u516b\u5341\u6b72\u4e86\u3002","Write it on your heart that every day is the best day in the year.","\u4f60\u6700\u9858\u610f\u505a\u7684\u90a3\u4ef6\u4e8b\uff0c\u5c31\u662f\u4f60\u771f\u6b63\u7684\u5929\u8ce6\u6240\u5728\u3002","I get up every morning and it\u2019s going to be a great day. You never know when it\u2019s going to be over, so I refuse to have a bad day.","\u6642\u9593\u548c\u7406\u60f3\u662f\u6700\u516c\u5e73\u7684\uff0c\u6642\u9593\u6703\u70ba\u61c2\u5f97\u71b1\u611b\u5b83\u3001\u73cd\u60dc\u5b83\u7684\u4eba\u800c\u6c38\u6046\uff0c\u7406\u60f3\u5247\u6703\u5782\u9752\u90a3\u4e9b\u6c38\u4e0d\u8a00\u68c4\u7684\u4eba\u3002","If you can do what you do best and be happy, you're further along in life than most people.","\u4e0d\u518d\u8ffd\u8457\u5225\u4eba\u53e3\u4e2d\u7684\u6f6e\u6d41\u8d70\uff0c\u66f4\u7be4\u5b9a\u5805\u6301\u81ea\u5df1\u771f\u6b63\u559c\u6b61\u7684\u3002","You may be disappointed if you fail, but you are doomed if you don\u2019t try.","\u8207\u5176\u628a\u5225\u4eba\u773c\u4e2d\u7684\u5b8c\u7f8e\u4eba\u751f\u7576\u4f5c\u8056\u7d93\uff0c\u4e0d\u5982\u4fe1\u4ef0\u81ea\u5df1\u5b9a\u7fa9\u7684\u81ea\u7531\u3002","Keep smiling, because life is a beautiful thing and there\u2019s so much to smile about.","\u628a\u6642\u9593\u82b1\u8cbb\u5728\u6709\u610f\u7fa9\u7684\u7fd2\u6163\u4e0a\uff0c\u80fd\u6539\u8b8a\u6211\u5011\u751f\u547d\u7684\u8cea\u5730\u3002","The sun is a daily reminder that we too can rise again from the darkness, that we too can shine our own light.","\u53ea\u6709\u771f\u6b63\u71b1\u611b\uff0c\u624d\u80fd\u65e5\u5fa9\u4e00\u65e5\u9577\u4e45\u5730\u5805\u6301\u4e0b\u53bb\u3002","Life isn\u2019t about waiting for the storm to pass, it\u2019s about learning to dance in the rain.","\u6c92\u6709\u76ee\u6a19\u7684\u52aa\u529b\u53eb\u5fd9\u788c\uff0c\u6709\u76ee\u6a19\u7684\u52aa\u529b\u624d\u53eb\u596e\u9b25\u3002","Life is what we make it, always has been, always will be.","\u8207\u9060\u65b9\u7684\u58ef\u9e97\u98a8\u666f\u76f8\u6bd4\uff0c\u6211\u5011\u6bcf\u5929\u9ad4\u9a57\u5230\u7684\uff0c\u624d\u662f\u503c\u5f97\u7d00\u5ff5\u7684\u91cd\u8981\u5c0f\u4e8b\u3002","Keep calm and carry on.","\u505a\u6cd5\u5343\u842c\u7a2e\uff0c\u800c\u4f60\u8981\u6709\u81ea\u5df1\u7684\u6a19\u6e96\u3002","Keep smiling, because life is a beautiful thing and there's so much to smile about.","\u6b72\u6708\u62b5\u4e0d\u904e\u7684\uff0c\u662f\u4e00\u9846\u597d\u597d\u751f\u6d3b\u7684\u5fc3\u3002","You cannot control everything that happens to you; you can only control the way you respond to what happens. In your response is your power.","\u73fe\u5728\u7684\u4e00\u5207\uff0c\u90fd\u662f\u5c0d\u672a\u4f86\u7684\u52a0\u5195\u3002","When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.","\u4f60\u8981\u7684\u7b54\u6848\uff0c\u53ea\u80fd\u81ea\u5df1\u5c0b\u627e\u3002","You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.","\u6709\u6642\u5019\uff0c\u4f60\u5f97\u505c\u4e00\u4e0b\u8173\u6b65\uff0c\u7b49\u4e00\u7b49\u5fc3\u9748\uff0c\u8b93\u5fc3\u60c5\u5e73\u548c\uff0c\u60f3\u4e00\u60f3\u81ea\u5df1\u751f\u6d3b\u4e2d\u64c1\u6709\u7684\u6240\u6709\u7f8e\u597d\u7684\u6771\u897f\u3002","Smile in the mirror. Do that every morning and you\u2019ll start to see a big difference in your life.","\u6211\u4e0d\u6015\u5343\u842c\u4eba\u963b\u64cb\uff0c\u53ea\u6015\u81ea\u5df1\u6295\u964d\u3002","There are no regrets in life, just lessons.","\u8b93\u6211\u5011\u8981\u5c07\u4e8b\u524d\u7684\u6182\u616e\uff0c\u63db\u70ba\u4e8b\u524d\u7684\u601d\u8003\u548c\u8a08\u756b\u5427\uff01","It is impossible to live without failing at something, unless you live so cautiously, that you might as well not have lived at all \u2013 in which case you fail by default.","\u518d\u9577\u7684\u8def\uff0c\u6162\u6162\u8d70\u4e00\u6b65\u6b65\u4e5f\u80fd\u8d70\u5b8c\uff0c\u518d\u77ed\u7684\u8def\uff0c\u4e0d\u9081\u958b\u96d9\u8173\u4e5f\u7121\u6cd5\u5230\u9054\u3002","Success is not final; failure is not fatal: It is the courage to continue that counts.","\u4e0d\u8981\u7b49\u5f85\u6a5f\u6703\uff0c\u800c\u662f\u8981\u5275\u9020\u6a5f\u6703\u3002","Instead of worrying about what you cannot control, shift your energy to what you can create.","\u5f88\u591a\u5931\u6557\u4e0d\u662f\u56e0\u70ba\u80fd\u529b\u6709\u9650\uff0c\u800c\u662f\u56e0\u70ba\u6c92\u6709\u5805\u6301\u5230\u5e95\u3002",s,"\u4e00\u500b\u4eba\u6700\u5927\u7684\u6575\u4eba\u662f\u81ea\u5df1\uff0c\u6c92\u6709\u5b8c\u4e0d\u6210\u7684\u4efb\u52d9\uff0c\u53ea\u6709\u5931\u53bb\u4fe1\u5fc3\u7684\u81ea\u5df1\u3002",r,q,"Just disconnect. Once in a day sometime, sit silently and from all connections disconnect yourself.","\u62b1\u6700\u5927\u7684\u5e0c\u671b\uff0c\u76e1\u6700\u5927\u7684\u52aa\u529b\uff0c\u505a\u6700\u58de\u7684\u6253\u7b97\u3002","Live in the sunshine, swim the sea, drink the wild air.","\u5225\u81ea\u5df1\u88fd\u9020\u58d3\u529b\uff0c\u6211\u5011\u6c92\u6709\u5fc5\u8981\u8ddf\u8457\u6642\u9593\u8d70\uff0c\u53ea\u9700\u8ddf\u8457\u5fc3\u614b\u548c\u80fd\u529b\u8d70\uff0c\u51e1\u4e8b\u96a8\u7de3\u3001\u76e1\u529b\u9054\u547d\u3001\u554f\u5fc3\u7121\u6127\uff0c\u5176\u4ed6\u7684\u4ea4\u7d66\u5929\u3002","Many of life\u2019s failures are people who did not realize how close they were to success when they gave up.",p,r,"\u4efb\u4f55\u7684\u9650\u5236\uff0c\u90fd\u662f\u5f9e\u81ea\u5df1\u7684\u5167\u5fc3\u958b\u59cb\u7684\u3002","Make each day your masterpiece.","\u751f\u6d3b\u4e00\u76f4\u90fd\u662f\u7f8e\u597d\u7684\uff0c\u96d6\u7136\u6709\u8f9b\u82e6\u7684\u5954\u6ce2\uff0c\u6709\u4eba\u60c5\u7684\u6de1\u6f20\uff0c\u4e5f\u6709\u5076\u723e\u7684\u78b0\u58c1\u548c\u53d7\u632b\uff0c\u6709\u8a31\u8a31\u591a\u591a\u7684\u75db\u548c\u4e0d\u5e78\uff0c\u7136\u800c\uff0c\u9019\u4e9b\u90fd\u4e0d\u80fd\u63a9\u98fe\u4e86\u751f\u6d3b\u7684\u7f8e\u597d\uff0c\u751f\u6d3b\u4e2d\u7e3d\u6709\u8a31\u591a\u503c\u5f97\u6211\u5011\u8ffd\u6c42\u548c\u56ae\u5f80\u7684\u6771\u897f\u3002","When we do the best we can, we never know what miracle is wrought in our life or the life of another.","\u751f\u547d\u4e2d\uff0c\u597d\u591a\u7684\u4e8b\u662f\u9019\u6a23\uff0c\u751f\u6d3b\u4e2d\uff0c\u597d\u591a\u7684\u60c5\u662f\u9019\u6a23\uff0c\u6c92\u6709\u7406\u7531\uff0c\u4e5f\u7121\u9700\u7406\u7531\uff0c\u611b\u5c31\u662f\u611b\uff0c\u559c\u6b61\u5c31\u662f\u559c\u6b61\uff0c\u6c92\u6709\u7d50\u679c\uff0c\u4e5f\u7121\u9808\u7d50\u679c\uff0c\u5fc3\u7518\u60c5\u9858\uff0c\u7121\u6028\u7121\u6094\u3002","You choose the life you live. If you don\u2019t like it, it\u2019s on you to change it because no one else is going to do it for you.","\u771f\u6b63\u6210\u529f\u7684\u4eba\u751f\uff0c\u4e0d\u5728\u65bc\u6210\u5c31\u7684\u5927\u5c0f\uff0c\u800c\u5728\u65bc\u4f60\u662f\u5426\u52aa\u529b\u5730\u53bb\u5be6\u73fe\u81ea\u6211\uff0c\u558a\u51fa\u81ea\u5df1\u7684\u8072\u97f3\uff0c\u8d70\u51fa\u5c6c\u65bc\u81ea\u5df1\u7684\u9053\u8def\u3002","Life is not a problem to be solved, but a reality to be experienced.",o,"Accept yourself, love yourself, and keep moving forward. If you want to fly, you have to give up what weighs you down.","\u5c31\u7b97\u8dd1\u6700\u5f8c\u4e00\u540d\u53c8\u600e\u6a23\uff0c\u81f3\u5c11\u6211\u6709\u904b\u52d5\u7cbe\u795e\u3002\u800c\u4e14\u6211\u4e00\u5b9a\u6703\u8dd1\u5b8c\u5168\u7a0b\uff0c\u53ea\u8981\u8dd1\u5230\u7d42\u9ede\u6211\u5c31\u6210\u529f\u4e86!","I enjoy life when things are happening. I don\u2019t care if it\u2019s good things or bad things. That means you\u2019re alive.","\u5982\u679c\u4f60\u7684\u9762\u524d\u6709\u9670\u5f71\uff0c\u90a3\u662f\u56e0\u70ba\u4f60\u7684\u80cc\u5f8c\u6709\u967d\u5149\u3002","More smiling, less worrying. More compassion, less judgment. More blessed, less stressed. More love, less hate.","\u5f88\u591a\u6642\u5019\uff0c\u4e0d\u5feb\u6a02\u4e26\u4e0d\u662f\u56e0\u70ba\u5feb\u6a02\u7684\u689d\u4ef6\u6c92\u6709\u9f4a\u5099\uff0c\u800c\u662f\u56e0\u70ba\u751f\u6d3b\u5f97\u9084\u4e0d\u5920\u7c21\u55ae\u3002","Don't cry because it's over, smile because it happened.","\u4eba\u7684\u4e00\u751f\u4e2d\u4e0d\u53ef\u80fd\u6703\u4e00\u5e06\u98a8\u9806\uff0c\u7e3d\u6703\u9047\u5230\u4e00\u4e9b\u632b\u6298\uff0c\u7576\u4f60\u5c0d\u751f\u6d3b\u5931\u53bb\u4e86\u4fe1\u5fc3\u7684\u6642\u5019\uff0c\u4ed4\u7d30\u7684\u770b\u4e00\u770b\u3001\u597d\u597d\u56de\u60f3\u4e00\u4e0b\u4f60\u6240\u9047\u5230\u7684\u6700\u7f8e\u597d\u7684\u4e8b\u60c5\u5427\uff0c\u90a3\u6703\u8b93\u4f60\u611f\u89ba\u5230\u751f\u6d3b\u7684\u7f8e\u597d\u3002","The more you praise and celebrate your life, the more there is in life to celebrate.","\u5982\u679c\u751f\u6d3b\u8e39\u4e86\u4f60\u597d\u591a\u8173\uff0c\u5225\u5fd8\u4e86\u7d66\u5b83\u5169\u500b\u8033\u5149\uff0c\u53cd\u6297\u7e3d\u6bd4\u6d41\u6dda\u5f37\u3002","Once you figure out who you are and what you love about yourself, I think it all kinda falls into place.","\u4e16\u4e0a\u6c92\u6709\u767d\u8cbb\u7684\u52aa\u529b\uff0c\u4e5f\u6c92\u6709\u78b0\u5de7\u7684\u6210\u529f\uff0c\u4e00\u5207\u7121\u5fc3\u63d2\u67f3\uff0c\u5176\u5be6\u90fd\u662f\u6c34\u5230\u6e20\u6210\u3002\u4eba\u751f\u6c92\u6709\u767d\u8d70\u7684\u8def\uff0c\u4e5f\u6c92\u6709\u767d\u5403\u7684\u82e6\uff0c\u8de8\u51fa\u53bb\u7684\u6bcf\u4e00\u6b65\uff0c\u90fd\u662f\u672a\u4f86\u7684\u57fa\u77f3\u8207\u92ea\u588a\u3002","The healthiest response to life is joy.","\u6211\u4e0d\u53ea\u60f3\u5206\u4eab\u4f60\u7684\u958b\u5fc3\u5feb\u6a02\uff0c\u4e5f\u60f3\u5206\u64d4\u4f60\u7684\u7169\u60f1\u82e6\u60b6\uff0c\u7576\u4f60\u9700\u8981\u6211\u6642\uff0c\u6211\u6703\u4e00\u76f4\u5728\uff1b\u82e5\u4e0d\u9700\u8981\u6211\uff0c\u4e5f\u5225\u5fd8\u4e86\u9019\u4e16\u4e0a\u9084\u6709\u4e00\u500b\u6211\u5728\u9060\u65b9\u70ba\u4f60\u52a0\u6cb9\u6253\u6c23\u4e26\u4e14\u5e0c\u671b\u4f60\u5e78\u798f\u5b89\u597d\u3002","You only live once, but if you do it right, once is enough.","\u5982\u679c\u96e8\u5b63\u9072\u9072\u6c92\u6709\u7d50\u675f\uff0c\u6211\u6703\u966a\u4f60\u4e00\u8d77\u6dcb\u96e8\u3002","Life becomes easier and more beautiful when we can see the good in other people.","\u6211\u77e5\u9053\u4f60\u771f\u7684\u5f88\u52aa\u529b\u4e86\uff0c\u6211\u5011\u90fd\u6709\u770b\u5230\uff0c\u4f60\u771f\u7684\u771f\u7684\u5f88\u68d2\uff08\u6478\u982d\uff09","If you want to be happy, do not dwell in the past, do not worry about the future, focus on living fully in the present.","\u4e0d\u6015\uff01\u653e\u5fc3\uff0c\u4f60\u4e0d\u662f\u4e00\u500b\u4eba\u3002","When we strive to become better than we are, everything around us becomes better too.","\u9806\u5f9e\u81ea\u5df1\u7684\u5fc3\uff0c\u4ea4\u7d66\u6642\u9593\u53bb\u89e3\u6c7a\u5427","Success is not how high you have climbed, but how you make a positive difference to the world.","\u8981\u76f8\u4fe1\u4f60\u5f88\u68d2\uff0c\u4f60\u53ef\u4ee5\u597d\u597d\u4f11\u606f\u4e00\u4e0b\uff0c\u518d\u7e7c\u7e8c\u8d70\u3002","Keep Going. Your hardest times often lead to the greatest moments of your life. Keep going. Tough situations build strong people in the end.","\u8ffd\u6c42\u76ee\u6a19\u7684\u8def\u9014\u4e0a\uff0c\u4e00\u5b9a\u6709\u611f\u5230\u75b2\u618a\u7121\u529b\u7684\u6642\u5019\uff0c\u8acb\u4e0d\u8981\u82db\u8cac\u81ea\u5df1\uff0c\u9069\u6642\u7684\u4f11\u606f\uff0c\u4e0d\u6703\u628a\u4f60\u5f9e\u8def\u9014\u4e0a\u6253\u56de\u539f\u9ede\uff0c\u4ed8\u51fa\u7684\u6642\u9593\u8207\u5fc3\u529b\u90fd\u4e0d\u6703\u767d\u8cbb\uff0c\u5b83\u5011\u662f\u7a2e\u5b50\uff0c\u800c\u4f60\u7684\u8010\u5fc3\u548c\u5805\u6301\u662f\u5b83\u5011\u7684\u967d\u5149\u8207\u6c34\uff0c\u9867\u597d\u81ea\u5df1\uff0c\u6301\u7e8c\u524d\u884c\uff0c\u7a2e\u5b50\u5fc5\u5c07\u958b\u82b1\u7d50\u679c\u3002","Nothing is more honorable than a grateful heart.","\u4f60\u96a8\u6642\u9700\u8981\uff0c\u6211\u90fd\u5728\uff0c\u9664\u975e\u6211\u7761\u8457\u3002","I believe that nothing in life is unimportant every moment can be a beginning.","\u751f\u6d3b\u662f\u4e00\u9762\u93e1\u5b50\u3002\u4f60\u5c0d\u5b83\u7b11\uff0c\u5b83\u5c31\u5c0d\u4f60\u7b11\uff1b\u4f60\u5c0d\u5b83\u54ed\uff0c\u5b83\u4e5f\u5c0d\u4f60\u54ed\u3002","Life imposes things on you that you can\u2019t control, but you still have the choice of how you\u2019re going to live through this.","\u6d3b\u8457\u4e00\u5929\uff0c\u5c31\u662f\u6709\u798f\u6c23\uff0c\u5c31\u8a72\u73cd\u60dc\u3002\u7576\u6211\u54ed\u6ce3\u6211\u6c92\u6709\u978b\u5b50\u7a7f\u7684\u6642\u5019\uff0c\u6211\u767c\u73fe\u6709\u4eba\u537b\u6c92\u6709\u8173\u3002","You will meet two kinds of people in life: ones who build you up and ones who tear you down. But in the end, you\u2019ll thank them both.","\u6211\u5011\u5fc3\u4e2d\u7684\u6050\u61fc\uff0c\u6c38\u9060\u6bd4\u771f\u6b63\u7684\u5371\u96aa\u5de8\u5927\u7684\u591a\u3002","Time doesn\u2019t heal emotional pain, you need to learn how to let go.","\u4e0d\u8981\u62ff\u5c0f\u4eba\u7684\u932f\u8aa4\u4f86\u61f2\u7f70\u81ea\u5df1\uff0c\u4e0d\u8981\u5728\u9019\u4e9b\u5fae\u4e0d\u8db3\u9053\u7684\u4e8b\u60c5\u4e0a\u6298\u78e8\u6d6a\u8cbb\u81ea\u5df1\u7684\u5bf6\u8cb4\u6642\u9593\u3002","Always find opportunities to make someone smile, and to offer random acts of kindness in everyday life.","\u5169\u500b\u4eba\u5171\u5617\u4e00\u500b\u75db\u82e6\u53ea\u6709\u534a\u500b\u75db\u82e6\uff0c\u5169\u500b\u4eba\u5171\u4eab\u4e00\u500b\u6b61\u6a02\u537b\u6709\u5169\u500b\u6b61\u6a02\u3002","Everything negative \u2013 pressure, challenges \u2013 is all an opportunity for me to rise.","\u4eba\u4e4b\u6240\u4ee5\u75db\u82e6\uff0c\u5728\u65bc\u8ffd\u6c42\u932f\u8aa4\u7684\u6771\u897f\u3002","Never lose hope. Storms make people stronger and never last forever.","\u5f97\u4e4b\u5766\u7136\uff0c\u5931\u4e4b\u6de1\u7136\uff0c\u9806\u5176\u81ea\u7136\uff0c\u722d\u5176\u5fc5\u7136\u3002","No amount of regretting can change the past, and no amount of worrying can change the future.","\u505a\u4e00\u500b\u6c7a\u5b9a\uff0c\u4e26\u4e0d\u96e3\uff0c\u96e3\u7684\u662f\u4ed8\u8af8\u884c\u52d5\uff0c\u4e26\u4e14\u5805\u6301\u5230\u5e95\u3002","If you want to live a happy life, tie it to a goal, not to people or things.","\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u7a7f\u900f\u8ff7\u9727\uff1b\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u5805\u6301\u5230\u5e95\uff1b\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u5316\u89e3\u5371\u6a5f\uff1b\u7b11\u5c0d\u4eba\u751f\uff0c\u80fd\u7167\u4eae\u9ed1\u6697\u3002","Be brave to stand for what you believe in even if you stand alone.","\u56f0\u96e3\u662f\u4e00\u584a\u9811\u77f3\uff0c\u5c0d\u65bc\u5f31\u8005\u5b83\u662f\u7d46\u8173\u77f3\uff0c\u5c0d\u65bc\u5f37\u8005\u5b83\u662f\u588a\u8173\u77f3\u3002","Do not fear failure but rather fear not trying.","\u96d6\u7136\u6211\u5011\u7121\u6cd5\u6539\u8b8a\u4eba\u751f\uff0c\u4f46\u53ef\u4ee5\u6539\u8b8a\u4eba\u751f\u89c0\u3002\u96d6\u7136\u6211\u5011\u7121\u6cd5\u6539\u8b8a\u74b0\u5883\uff0c\u4f46\u6211\u5011\u53ef\u4ee5\u6539\u8b8a\u5fc3\u5883\u3002","You're not defined by your past; you're prepared by it. You're stronger, more experienced, and you have greater confidence.","\u7576\u4f60\u5feb\u6a02\u6642\uff0c\u4f60\u8981\u60f3\uff0c\u9019\u5feb\u6a02\u4e0d\u662f\u6c38\u6046\u7684\u3002\u7576\u4f60\u75db\u82e6\u6642\uff0c\u4f60\u8981\u60f3\uff0c\u9019\u75db\u82e6\u4e5f\u4e0d\u662f\u6c38\u6046\u7684\u3002","You can\u2019t put a limit on anything. The more you dream, the farther you get.","\u547d\u904b\u5c31\u50cf\u81ea\u5df1\u7684\u638c\u7d0b\uff0c\u96d6\u7136\u5f4e\u5f4e\u66f2\u66f2\uff0c\u537b\u6c38\u9060\u638c\u63e1\u5728\u81ea\u5df1\u624b\u4e2d\u3002","Your time is limited, so don\u2019t waste it living someone else\u2019s life. Don\u2019t be trapped by dogma \u2013 which is living with the results of other people\u2019s thinking.","\u4eba\u662f\u53ef\u4ee5\u5feb\u6a02\u5730\u751f\u6d3b\u7684\uff0c\u53ea\u662f\u6211\u5011\u81ea\u5df1\u9078\u64c7\u4e86\u8907\u96dc\uff0c\u9078\u64c7\u4e86\u5606\u606f\uff01","Life doesn\u2019t require that we be the best, only that we try our best.","\u4e0d\u7ba1\u5f9e\u4ec0\u9ebc\u6642\u5019\u958b\u59cb\uff0c\u91cd\u8981\u7684\u662f\u958b\u59cb\u4ee5\u5f8c\u4e0d\u8981\u505c\u6b62\uff1b\u4e0d\u7ba1\u5728\u4ec0\u9ebc\u6642\u5019\u7d50\u675f\uff0c\u91cd\u8981\u7684\u662f\u7d50\u675f\u4ee5\u5f8c\u4e0d\u8981\u5f8c\u6094\u3002","The purpose of our lives is to be happy.","\u4f60\u4e0d\u80fd\u5de6\u53f3\u5929\u6c23\uff0c\u4f46\u53ef\u4ee5\u6539\u8b8a\u5fc3\u60c5\u3002\u4f60\u4e0d\u80fd\u6539\u8b8a\u5bb9\u8c8c\uff0c\u4f46\u53ef\u4ee5\u638c\u63e1\u81ea\u5df1\u3002\u4f60\u4e0d\u80fd\u9810\u898b\u660e\u5929\uff0c\u4f46\u53ef\u4ee5\u73cd\u60dc\u4eca\u5929\u3002","Life is about accepting the challenges along the way, choosing to keep moving forward, and savoring the journey.","\u6210\u529f\u7684\u95dc\u9375\u5728\u65bc\u76f8\u4fe1\u81ea\u5df1\u6709\u6210\u529f\u7684\u80fd\u529b\u3002","Find people who will make you better.","\u4eba\u751f\u56db\u7136\uff1a\u4f86\u662f\u5076\u7136\uff0c\u53bb\u662f\u5fc5\u7136\uff0c\u76e1\u5176\u7576\u7136\uff0c\u9806\u5176\u81ea\u7136\u3002","Great things happen to those who don't stop believing, trying, learning, and being grateful.","\u771f\u6b63\u7684\u5805\u97cc\uff0c\u61c9\u8a72\u662f\u54ed\u7684\u6642\u5019\u8981\u5fb9\u5e95\uff0c\u7b11\u7684\u6642\u5019\u8981\u958b\u61f7\uff0c\u8aaa\u7684\u6642\u5019\u8981\u6dcb\u6f13\u76e1\u81f4\uff0c\u505a\u7684\u6642\u5019\u4e0d\u8981\u7336\u8c6b\u3002","Follow your heart, listen to your inner voice, stop caring about what others think.","\u751f\u547d\u5f88\u6b98\u9177\uff0c\u7528\u60b2\u50b7\u8b93\u4f60\u4e86\u89e3\u4ec0\u9ebc\u53eb\u5e78\u798f\uff0c\u7528\u566a\u97f3\u6559\u6703\u4f60\u5982\u4f55\u6b23\u8cde\u5bc2\u975c\uff0c\u7528\u5f4e\u8def\u63d0\u9192\u4f60\u524d\u65b9\u9084\u6709\u5766\u9014\u3002","To shine your brightest light is to be who you truly are.","\u4eba\u751f\u5c31\u50cf\u4e00\u672c\u66f8\uff0c\u51fa\u751f\u662f\u5c01\u9762\uff0c\u6b78\u53bb\u662f\u5c01\u5e95\uff0c\u5167\u5bb9\u8981\u9760\u81ea\u5df1\u586b\u3002","Stop comparing yourself to other people, just choose to be happy and live your own life.","\u6642\u9593\u7d66\u52e4\u52c9\u7684\u4eba\u7559\u4e0b\u667a\u6167\u7684\u529b\u91cf\uff0c\u7d66\u61f6\u60f0\u7684\u4eba\u7559\u4e0b\u7a7a\u865b\u548c\u6094\u6068\u3002","Be thankful for everything that happens in your life; it\u2019s all an experience.","\u80fd\u4f7f\u6211\u5011\u611f\u89ba\u5feb\u6a02\u7684\uff0c\u4e0d\u662f\u74b0\u5883\uff0c\u800c\u662f\u614b\u5ea6\u3002","Do not let the memories of your past limit the potential of your future. There are no limits to what you can achieve on your journey through life, except in your mind.","\u5e78\u798f\u5f9e\u4f86\u4e0d\u5728\u65bc\u4f60\u64c1\u6709\u4ec0\u9ebc\uff0c\u5e78\u798f\u5728\u65bc\u7528\u81ea\u5df1\u7684\u80fd\u529b\u53bb\u52aa\u529b\u5275\u9020\uff0c\u53bb\u7528\u5fc3\u611f\u53d7\u3002","Do Not Lie to Yourself.","\u751f\u6d3b\u53ef\u4ee5\u662f\u751c\u7684\uff0c\u4e5f\u53ef\u4ee5\u662f\u82e6\u7684\uff0c\u4f46\u4e0d\u80fd\u662f\u6c92\u5473\u7684\u3002\u4f60\u53ef\u4ee5\u52dd\u5229\uff0c\u4e5f\u53ef\u4ee5\u5931\u6557\uff0c\u4f46\u4f60\u4e0d\u80fd\u5c48\u670d\u3002","Surround yourself with people who believe in your dreams, encourage your ideas, support your ambitions, and bring out the best in you.","\u4f60\u6c38\u9060\u4e0d\u80fd\u9760\u9003\u907f\u751f\u6d3b\u4f86\u5c0b\u5f97\u5e73\u975c\u3002","The more you feed your mind with positive thoughts, the more you can attract great things into your life.","\u5373\u4f7f\u7b2c\u4e00\u6b65\u53ef\u80fd\u50cf\u9ed1\u6d1e\u4e00\u6a23\u795e\u79d8\uff0c\u4e5f\u9084\u662f\u8981\u7e7c\u7e8c\u5f80\u524d\u3002","It\u2019s your life; you don\u2019t need someone\u2019s permission to live the life you want. Be brave to live from your heart.","\u6211\u5011\u66f4\u9700\u8981\u7684\uff0c\u5176\u5be6\u662f\u5c0d\u81ea\u5df1\u7684\u8b9a\u7f8e\u3002","Once you realize you deserve a bright future, letting go of your dark past is the best choice you will ever make.","\u4eba\u7e3d\u662f\u559c\u6b61\u5728\u5931\u53bb\u8207\u5f97\u5230\u4e4b\u9593\u5f98\u5f8a\u8ff7\u832b\uff0c\u5176\u5be6\uff0c\u90a3\u4e9b\u7d93\u6b77\u904e\u7684\u4e8b\u60c5\u90fd\u6703\u6210\u70ba\u4f60\u7684\u8ca1\u5bcc\u3002","Smile more. Smiling can make you and others happy.","\u751f\u6d3b\u7e3d\u6703\u7d66\u4f60\u53e6\u4e00\u500b\u6a5f\u6703\uff0c\u9019\u500b\u6a5f\u6703\u53eb\u660e\u5929\u3002","Do what you love, love what you do, and with all your heart give yourself to it.","\u4eba\u751f\u591a\u4e00\u4efd\u632b\u6298\uff0c\u5c31\u591a\u4e00\u4efd\u4eba\u751f\u7684\u611f\u609f\uff1b\u4eba\u751f\u591a\u4e00\u6b21\u8dcc\u6253\uff0c\u5c31\u591a\u4e00\u689d\u6297\u722d\u7684\u7d93\u9a57\u3002","Do not set aside your happiness. Do not wait to be happy in the future. The best time to be happy is always now.",p,"Success is a journey not a destination.",o,"Success only comes to those who dare to attempt.","\u5287\u672c\u53ef\u4ee5\u5beb\u51fa\u5b8c\u7f8e\u7684\u7d50\u5c3e\uff0c\u53ef\u662f\u73fe\u5be6\u751f\u6d3b\u4e0d\u662f\u96fb\u5f71\u3002","By being yourself you put something wonderful in the world that was not there before.","\u7576\u4f60\u771f\u5fc3\u6e34\u671b\u67d0\u6a23\u6771\u897f\u6642\uff0c\u6574\u500b\u5b87\u5b99\u90fd\u6703\u806f\u5408\u8d77\u4f86\u5e6b\u52a9\u4f60\u5b8c\u6210\u3002","If opportunity doesn't knock, build a door.","\u6211\u5011\u7528\u4e00\u8f29\u5b50\u53bb\u5c0b\u627e\u751f\u547d\u7684\u610f\u7fa9\uff0c\u4f46\u6216\u8a31\u300e\u751f\u547d\u300f\u5c31\u662f\u4f60\u6b63\u5728\u505a\u7684\u5c0f\u4e8b\uff0c\u662f\u9019\u4e9b\u5c0f\u4e8b\u8b93\u4f60\u6709\u4e86\u300e\u60f3\u6d3b\u8457\u300f\u7684\u52d5\u529b\u3002","I never dreamed about success. I worked for it.","\u59b3\u6d3b\u8457\u4e0d\u80fd\u53ea\u8a0e\u597d\u5225\u4eba\uff0c\u6bcf\u4e00\u500b\u9078\u9805\u90fd\u8a72\u70ba\u81ea\u5df1\u8ca0\u8cac\u3002","Aim for the moon. If you miss, you may hit a star.","\u751f\u547d\u53ea\u80fd\u5f9e\u56de\u9867\u4e2d\u9818\u609f\uff0c\u4f46\u5fc5\u9808\u5728\u524d\u77bb\u4e2d\u5c55\u958b\u3002","Success is liking yourself, liking what you do, and liking how you do it.","\u4e00\u8f29\u5b50\u7e3d\u8a72\u505a\u597d\u4e00\u4ef6\u4e8b\uff0c\u5c31\u662f\u505a\u597d\u81ea\u5df1\u3002","If you prioritize yourself, you are going to save yourself.","\u4f60\u7684\u751f\u547d\u662f\u591a\u9ebd\u7f8e\u7684\u5b58\u5728\uff0c\u8acb\u5f35\u958b\u624b\u8b93\u4e16\u754c\u8d70\u5411\u4f60\u3002","You are your best thing.","\u76e1\u60c5\u76e1\u8208\u7684\u9ad4\u9a57\u4eba\u751f\uff0c\u5982\u679c\u80fd\u5920\u9019\u6a23\uff0c\u4eba\u751f\u5c31\u6c92\u6709\u907a\u61be\u4e86\u3002","Life is 10% what happens to you and 90% how you react to it.","\u4eba\u751f\u9047\u5230\u610f\u5916\u7684\u7576\u4e0b\u8981\u5b78\u6703\u63a5\u53d7\u73fe\u72c0\uff0c\u7576\u4f60\u91cd\u65b0\u6e96\u5099\u597d\u4e4b\u5f8c\u6a5f\u6703\u9084\u6703\u518d\u51fa\u73fe\u7684\u3002","Love yourself first and everything else falls into place.","\u627e\u51fa\u4f60\u662f\u8ab0\u3001\u4e26\u4e14\u6210\u70ba\u4f60\u81ea\u5df1\u3002\u9019\u662f\u4f60\u7684\u9748\u9b42\u4e4b\u6240\u4ee5\u4f86\u5230\u9019\u4e16\u754c\u7684\u4efb\u52d9\u3002","It always seems impossible until it's done.","\u5728\u8584\u60c5\u7684\u4e16\u754c\uff0c\u7e7c\u7e8c\u6df1\u60c5\u5730\u6d3b\u8457\u3002","If you cannot do great things, do small things in a great way.","\u771f\u6b63\u7684\u751f\u6d3b\uff0c\u5c31\u662f\u5168\u5fc3\u5168\u610f\u505a\u6211\u5011\u559c\u611b\u7684\u4e8b\u3002","What you get by achieving your goals is not as important as what you become by achieving your goals."," \u611b\u662f\u7f8e\u9e97\u7684\u3001\u559c\u6085\u7684\u3001\u751a\u81f3\u662f\u75db\u82e6\u7684\uff0c\u5b83\u662f\u6211\u5011\u8eab\u800c\u70ba\u4eba\u80fd\u63a5\u53d7\u7684\u6700\u597d\u79ae\u7269\u3002",n,"\u7576\u4f60\u5fc3\u88e1\u9762\u5b58\u5728\u8457\u4ec0\u9ebc\u6a23\u7684\u5ff5\u982d\uff0c\u5c31\u6703\u5438\u5f15\u4ec0\u9ebc\u6a23\u7684\u4e8b\u7269\u4f86\u5230\u773c\u524d\u3002","If you carry joy in your heart, you can heal any moment.","\u4e00\u5b9a\u8981\u76f8\u4fe1\uff0c\u539f\u4f86\u771f\u7684\u6709\u4e00\u500b\u9069\u5408\u4f60\u7684\u4eba\uff0c\u5728\u4eba\u751f\u7684\u8def\u4e0a\u3002","Speak your mind, even if your voice shakes.","\u6211\u4e0d\u8981\u904e\u9019\u6a23\u4e00\u773c\u5c31\u80fd\u671b\u5230\u982d\u7684\u751f\u6d3b\uff0c\u6211\u8981\u597d\u597d\u4eab\u53d7\u751f\u547d\uff0c\u52c7\u6562\u53bb\u5c0b\u6c42\u611b\u548c\u81ea\u7531\u3002","The best and most beautiful things in the world cannot be seen or even touched \u2014 they must be felt with the heart.","\u6bcf\u500b\u60f3\u653e\u68c4\u7684\u6642\u5019\uff0c\u544a\u8a34\u81ea\u5df1\u4f60\u9084\u53ef\u4ee5\u3002","If you can dream it, you can do it.","\u7576\u4f60\u8d8a\u88ab\u8a8d\u53ef\u7684\u6642\u5019\uff0c\u4f60\u8d8a\u8981\u7d66\u8eab\u908a\u7684\u4eba\u529b\u91cf\u3002","You don't always need a plan. Sometimes you just need to breathe, trust, let go, and see what happens.","\u6211\u5011\u5fc5\u9808\u63a5\u53d7\u6709\u9650\u7684\u5931\u671b\uff0c\u4f46\u7d55\u4e0d\u5931\u53bb\u7121\u76e1\u7684\u5e0c\u671b\u3002","Be happy for this moment. This moment in your life.","\u4f60\u82e5\u660e\u767d\u4eba\u751f\u53ea\u6d3b\u4e00\u6b21\uff0c\u5c31\u66f4\u6c92\u6709\u96a8\u6ce2\u9010\u6d41\u5fb7\u7406\u7531\u3002","You can't cross the sea merely by standing and staring at the water.","\u8981\u6709\u52c7\u6c23\u53bb\u8ffd\u96a8\u4f60\u7684\u5fc3\u548c\u76f4\u89ba\u3002\u5b83\u5011\u7e3d\u662f\u77e5\u9053\u4f60\u771f\u6b63\u60f3\u8981\u6210\u70ba\u4ec0\u9ebc\u3002","Do what you can, with what you have, where you are.","\u5982\u679c\u4f60\u628a\u6bcf\u4e00\u5929\u7576\u6210\u81ea\u5df1\u4eba\u751f\u7684\u6700\u5f8c\u4e00\u5929\u4f86\u904e\uff0c\u4f60\u624d\u80fd\u5920\u660e\u767d\u4eba\u751f\u7684\u771f\u8ae6. \u4e0d\u8981\u7b49\u5f85\u6a5f\u6703\uff0c\u800c\u662f\u8981\u5275\u9020\u6a5f\u6703\u3002","You are never too old to set another goal or to dream a new dream.",q,"When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.","\u7528\u6700\u5c11\u7684\u6094\u6068\u9762\u5c0d\u904e\u53bb\u3002\u7528\u6700\u5c11\u7684\u6d6a\u8cbb\u9762\u5c0d\u73fe\u5728\u3002\u7528\u6700\u591a\u7684\u5922\u9762\u5c0d\u672a\u4f86\u3002","When you put love out in the world it travels, and it can touch people and reach people in ways that we never even expected.","\u5225\u628a\u5b8c\u7f8e\u7576\u6210\u76ee\u6a19\uff0c\u90a3\u53ea\u662f\u628a\u81ea\u5df1\u903c\u6b7b\u81ea\u5df1\u800c\u5df2\u3002","Success is not final, failure is not fatal: it is the courage to continue that counts.","\u4ee5\u4f60\u7684\u60f3\u50cf\uff0c\u800c\u4e0d\u662f\u4f60\u7684\u904e\u5f80\u4f86\u751f\u6d3b\u3002","Try to be a rainbow in someone's cloud.","\u672c\u4f86\u7121\u671b\u7684\u4e8b\uff0c\u5927\u81bd\u5617\u8a66\uff0c\u5f80\u5f80\u80fd\u6210\u529f\u3002","Sometimes your joy is the source of your smile, but sometimes your smile can be the source of your joy.","\u8207\u5176\u601d\u8003\u4e0b\u6b21\u653e\u5047\u662f\u4ec0\u9ebc\u6642\u5019\uff0c\u6216\u8a31\u4f60\u8a72\u601d\u8003\uff0c\u5982\u4f55\u5275\u9020\u4e00\u500b\u4e0d\u6703\u60f3\u9003\u96e2\u7684\u751f\u6d3b\u3002","Life isn't about finding yourself. Life is about creating yourself.","\u6c92\u6709\u4eba\u80fd\u5920\u70ba\u4f60\u7684\u4eba\u751f\u8ca0\u8cac\uff0c\u6216\u7d66\u4f60\u4eba\u751f\u9053\u8def\u7684\u771f\u6b63\u89e3\u7b54\uff0c\u9664\u4e86\u4f60\u81ea\u5df1\u3002",n,"\u6210\u5c31\u7684\u552f\u4e00\u9014\u5f91\u662f\u71b1\u611b\u81ea\u5df1\u7684\u4e8b\u696d\uff0c\u5982\u679c\u4f60\u9084\u6c92\u627e\u5230\u7684\u8a71\uff0c\u7e7c\u7e8c\u5c0b\u627e\uff0c\u4e0d\u8981\u5c48\u5c31\u3002","Encourage yourself, believe in yourself, and love yourself. Never doubt who you are.","\u5fc3\u6709\u591a\u5927\uff0c\u821e\u53f0\u5c31\u6709\u591a\u5927\u3002","Yesterday's the past, tomorrow's the future, but today is a gift. That's why it's called the present."],k),A.a(["\u6c92\u4e8b\u7684 \u7761\u4e00\u89ba\u5c31\u6703\u597d\u7684\u4e86","\u62b1\u62b1 \u6211\u966a\u7740\u4f60 (\u62b1)","(\u6478\u6478\u982d) \u6c92\u4e8b\u6c92\u4e8b \u4e0d\u54ed","(\u975c\u975c\u5730\u5728\u4f60\u65c1\u908a) ","\u6211\u4e5f\u4e00\u6a23...\u6211\u5011\u4e00\u8d77\u52a0\u6cb9\u5427!","\u597d\u597d\u4f11\u606f \u5feb\u53bb\u7761\u4e00\u56de","\u90a3\u8ddf\u6211\u8aaa\u8aaa\u5427 \u6211\u9858\u610f\u807d \u8aaa\u751a\u9ebc\u90fd\u53ef\u4ee5 \u60f3\u7f75\u5c31\u7f75 \u62b1\u6028\u5c31\u62b1\u6028 \u54ed\u5c31\u54ed\u5427 \u6211\u966a\u7740\u4f60\u5462","\u662f\u8ab0\u8b93\u4f60\u90a3\u9ebc\u7d2f \u6211\u53bb\u8ddf\u4ed6\u8aaa\u8aaa;(","\u4e0d\u7528\u52c9\u5f37\u81ea\u5df1\u7684 \u6c92\u6709\u4eba\u662f\u5b8c\u7f8e\u7684 \u9700\u8981\u4f11\u606f\u5c31\u53bb\u4f11\u606f\u5427 \u6c92\u95dc\u4fc2\u7684","(\u62cd\u62cd\u80a9\u8180) \u4f86 \u9760\u904e\u4f86\u7761\u4e00\u6703\u5152\u5427","\u7d2f\u4e86\u4e0d\u8981\u7dca \u77e5\u9053\u70ba\u751a\u9ebc\u55ce \u56e0\u70ba\u6211\u5728\u554a \u7d66\u4f60\u500b\u62b1\u62b1","\u5805\u6301\u4f4f \u5982\u679c\u5805\u6301\u4e0d\u4f4f\u5c31\u904e\u4f86 \u6211\u7d66\u4f60\u5145\u5145\u96fb (\u78c1..\u78c1...)","\u4f60\u559c\u6b61\u751a\u9ebc\u5c31\u505a\u751a\u9ebc \u5225\u7ba1\u5225\u4eba \u4f60\u505a\u4f60\u81ea\u5df1 \u5c31\u7b97\u6c92\u6709\u4eba\u8a8d\u540c\u4f60 \u6211\u8a8d\u540c\u4f60","\u6bcf\u4e00\u6b21\u77e5\u9053\u4f60\u5f88\u7d2f\u6211\u90fd\u5f88\u96e3\u904e \u5225\u59d4\u5c48\u4e86\u81ea\u5df1 \u597d\u55ce \u6211\u5e0c\u671b\u4f60\u5feb\u5feb\u6a02\u6a02\u7684","\u4f60\u77e5\u9053\u55ce \u6211\u5f88\u60f3\u73fe\u5728\u5c31\u5728\u4f60\u8eab\u908a \u6211\u4e0d\u5e0c\u671b\u4f60\u7d2f\u4e86\u537b\u6c92\u4eba\u75bc \u53ef\u662f\u65e2\u7136\u6211\u4e0d\u80fd \u5c31\u5e0c\u671b\u9019\u53e5: \u52a0\u6cb9!, \u53ef\u4ee5\u4ee4\u4f60\u611f\u89ba\u597d\u4e00\u9ede","\u6709\u500b\u4eba\u5e0c\u671b\u4f60\u597d \u6240\u4ee5\u5225\u52c9\u5f37\u81ea\u5df1 \u8a18\u5f97\u597d\u597d\u4f11\u606f \u5feb\u53bb\u7761\u4e00\u89ba\u723d\u7684","(\u62b1\u62b1\xd7N)","Go to sleep ba, sleep ba, sleep ba Zzzz","Give you a hug ;) ","Everything's gonna be alright, no problem;)","When we got tired, lay down, take a rest. But of coarse, make sure you will stand up again, gayauu!","When it comes to days like this, just fxxk them, we mess up things, but so what?? haha we are still great people","I know it's tired, I know, and I am always here for you","The only utmost important thing you have to consider is loving yourself, other? Doesn't really matter a lot","Work hard, play hard, and remember to sleep hard too hehe","\u6216\u8a31\u6211\u5011\u90fd\u5f88\u5e73\u51e1 \u4f46\u6211\u5011\u90fd\u662f\u7368\u4e00\u7121\u4e8c\u7684 \u4e0d\u9700\u8981\u70ba\u4e86\u751a\u9ebc\u800c\u8981\u8b93\u81ea\u5df1\u96e3\u53d7\u548c\u7d2f \u9806\u5176\u81ea\u7136\u5c31\u597d\u4e86","We'll be alright, just take a rest","No problem, no matter how messy things are, it is gonna be alright, they are all minor things in our life","Pikachuuu~~ \u5145\u96fb\u6210\u529f!","Pika pika chuchuchuchuchuuuu~~~~~ 100%\u96fb\u91cf!!","I will stay by your side whenever you need it","You are doing super super good already, don't cry","\u7167\u9867\u597d\u81ea\u5df1 \u5225\u628a\u81ea\u5df1\u7d2f\u58de\u4e86","\u547c\u5695\u547c\u5695ZzzzZzzz","I recommend lay down, close your eyes, and sleep","I know I doesn't mean a lot to you, but I hope you get enough sleep, get enough happiness, and get enough love.","We can do it dik!! Gayauu!!","Even it is tough, don't forget to smile; Even it is tough, we can still enjoy it, as it is part of our life","Gayau tgt ba \ud83d\ude22","Gayauuu nei duk dik!! \ud83d\ude24","Try your best jau ok! Don't worry too much lah","Just go with the flow when you think it is out of control, it'll still be fine dik","hughug","sun fu liu \ud83d\ude22","\u8f9b\u82e6\u4e86 \u4f11\u606f\u4e0b\u5427"],k),A.a(["\u76e1\u529b\u4e86 \u5c31\u5225\u4e0d\u958b\u5fc3\u5587 \u4e0b\u6b21\u6539\u5c31\u597d\u4e86","\u54ed\u5427 \u6211\u5728\u9019\u966a\u7740\u4f60","(\u62b1\u62b1) T_T \u4e00\u8d77\u54ed\u5427","\u8ab0\u8b93\u4f60\u4e0d\u958b\u5fc3 \u544a\u8a34\u6211 \u6211\u5e6b\u4f60\u5728\u5fc3\u88e1\u9762\u7f75\u4ed6\u4e00\u5927\u9813 \u54fc","\u5225\u54ed\u561b \u4f60\u7b11\u8d77\u4f86\u6bd4\u8f03\u7f8e \u6211\u5e0c\u671b\u4f60\u662f\u5feb\u6a02\u7684","\u4e0d\u54ed\u4e0d\u54ed \u4e0d\u7136\u5c31\u8ddf\u6211\u4e00\u6a23\u4e11\u4e86;p (\u96d6\u7136\u6211\u662f\u7121\u4efb\u6b61\u8fce\u7684\u5587hehe","\u5225\u4e0d\u958b\u5fc3 \u4f60\u9084\u6709\u6211! \u96d6\u7136\u6211\u6c92\u751a\u9ebc\u7528 \u4f46\u81f3\u5c11\u6211\u662f\u652f\u6301\u4f60\u7684","\u6211\u73fe\u5728\u4e5f\u4e0d\u958b\u5fc3 \u56e0\u70ba\u4f60\u4e0d\u958b\u5fc3 \u5feb\u9ede\u958b\u5fc3\u8d77\u4f86 \u6211\u5011\u53bb\u5403\u5403\u5403!","(\u7d66\u7d19\u5dfe) \u6c92\u4e8b\u7684 \u5f88\u5feb\u90fd\u6703\u904e\u53bb\u7684","\u8b93\u6642\u9593\u6c96\u6de1\u4e00\u5207\u5427 \u54ed\u904e\u4e86 \u5c31\u904e\u53bb\u4e86 \u90fd\u4e0d\u91cd\u8981\u4e86","\u4e56\u4e56 \u7761\u500b\u89ba\u5c31\u597d\u4e86 \u8a18\u5f97\u6700\u91cd\u8981\u9084\u662f\u81ea\u5df1 \u4e00\u5b9a\u8981\u5feb\u5feb\u6a02\u6a02!!","\u544a\u8a34\u6211\u600e\u9ebc\u4e86\u597d\u55ce \u6211\u64d4\u5fc3\u4f60...\u6211\u6709\u751a\u9ebc\u53ef\u4ee5\u70ba\u4f60\u505a\u7684\u55ce?","\u52a0\u6cb9 \u52a0\u6cb9\u52a0\u6cb9! \u751a\u9ebc\u8b93\u4f60\u4e0d\u958b\u5fc3\u7684 \u90fd\u6253\u57ae\u5b83!","\u597d\u597d\u6df1\u547c\u5438 \u5e73\u975c\u5167\u5fc3 \u751a\u9ebc\u4e5f\u5225\u60f3 \u5c31\u657812345...","\u501f\u4f60\u80a9\u8180 \u9760\u904e\u4f86\u5427 \u6211\u966a\u7740\u4f60","\u5176\u5be6\u6211\u5514\u4fc2\u597d\u8b58\u5b89\u6170\u4eba... \u4f60\u9084\u597d\u55ce\u2026? \u4e0d\u597d\u7684\u8a71\u600e\u9ebc\u8fa6...\u6211\u53ef\u4ee5\u53bb\u4f60\u8eab\u908a\u55ce\u2026? \u4f60\u9700\u8981\u6211\u7684\u8a71 \u6211\u90fd\u6703\u52aa\u529b\u5728","\u50bb\u74dc \u4e0d\u503c\u5f97 \u4f60\u8981\u597d\u597d\u611b\u81ea\u5df1\u554a \u5176\u4ed6\u90fd\u4e0d\u91cd\u8981 \u4f60\u5feb\u6a02\u5c31\u597d \u5225\u59d4\u5c48\u81ea\u5df1","\u6c92\u4e8b\u7684 \u90fd\u6703\u597d\u7684 \u9019\u53ea\u4e0d\u904e\u662f\u77ed\u66ab\u7684\u4e00\u500b\u5751 \u6211\u5011\u90fd\u80fd\u8de8\u904e\u53bb\u7684!","Give you a big big hug","Cry ba cry ba, cry zhor jau wui feel much better;)","You are very good already, give yourself a hug!","Cheer up girl, you are not alone, I am with you","Hey... Gayauuu, tgt gayauuu!!","Keep you smile, cuz you worth it lah","Relaxx, nothing is more important than your smile","I am here with you ah... Dun be sad...\ud83d\ude22","Believe me or not, good things will come after all the tough things happened","Rest har sin joi think! Dun overthink \ud83d\ude24","Happiness is a choice, but if you choose to feel unhappy at this moment, I will accompany you dik \ud83d\ude3f","Whatever happens on you, lemme hit them away \ud83d\ude24\ud83d\udc4a\ud83c\udffb","Lemme give you a lamp in your heart, haha, no more darkness now \ud83d\ude24","Press the button at the right bottom, I hope it makes you feel better","No matter what, you are still great person","Lay down, sleep awhile, fxxk them, and go ahead along your own path haha","It is not worth paying your smile for those unhappy things in your life, cuz you look beautiful, especially when you smile\ud83d\ude24"],k),A.a(["https://www.instagram.com/p/CjLFq3_PCBu/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Ci7oTxlBmZw/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Ciu2RmRBKmk/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Ch43eg5BIHw/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/ChXTA_GMeVO/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/ChPlnvVrSYx/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjNjKydP9AI/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjiJoZapGev/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjQKM86pbr6/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CisGZHsp9Sa/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CiPzQ90J4ZN/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Ciy6-dcPiMs/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiKRqzxJ7TA/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Ciw4Mzyp9e6/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CizsMy2rUzk/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CeACRiPMUbo/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Cf01mJ9JJWC/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CikPwWAqdr-/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CimpCB5pCKt/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiWf2UZg5O3/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Cigy4REvWYo/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CgrTpPMD2i0/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiVPWTBKfiv/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CihrBzTOMLo/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Ch6fxq9hIM6/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Cja5KAiAb6t/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiuW334J_-6/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjIBI46gWlT/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CihQaMRh_4x/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjVGSvPvS6f/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Ci6_gYMBuW7/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjPOT0RrvvK/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjKSgm7v4jN/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjE0FGQAUxW/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Ci7MJlFsbW1/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjFe9lUvo1M/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Ci2LJe_pKyF/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiIJynuN70o/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Ch7JqLwJbBz/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/ChhsdsDK7lX/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjAYEQ1JPHP/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjpJhetMvrd/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjiR8R3PNPT/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Cg8j21hLytH/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjX5bwXrihS/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjX28bLJVQl/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjdDGMsvHNU/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjX9Ffev8EH/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjfARHBPmbL/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjhZIWKM7vl/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjZWUh0vfzU/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjIaK88Pb4R/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjIUtDvvp9q/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiUefpHpawB/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjSoAECA0H6/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjI_e83KWYf/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjTPYO1JU7u/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjqJ0ioPh9q/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjVS-HMtWqG/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjF6lxWJWpT/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Cjno-zvvDFH/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjmxhVopAUv/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/Cjnlr-WK2hJ/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjqDzE1g9Ld/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjNd6_XPhNQ/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjmV_N4NjUx/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Cisla1RKPm-/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjGZ1j5AP5M/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CiqvMtbj9hP/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CiwQllXJKQ3/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjpzP_7gYAf/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjCeJYkt-V-/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/Cjept1QjBh6/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjnTbPSvK10/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjShUXojJAn/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjmuiRsDy0K/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/CjGAkLZJlxe/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/reel/ChvjHtirZw-/?igshid=YmMyMTA2M2Y=","https://www.instagram.com/p/CjbAUbwMRTv/?igshid=YmMyMTA2M2Y="],k),B.l)}}
 A.vH.prototype={
 N6(){this.a8(new A.a1J(this))},
 Nc(){var s,r,q,p={},o=new A.cn(Date.now(),!1),n=A.a9Q(o),m=A.C8(o)
 p.a=0
 for(s=1;s<m;++s)switch(s){case 1:case 3:case 5:case 7:case 8:case 10:case 12:p.a+=31
 break
-case 2:r=B.f.d0(n,4)
+case 2:r=B.f.cK(n,4)
 q=p.a
 if(r===0)p.a=q+29
 else p.a=q+28
 break
 case 4:case 6:case 9:case 11:p.a+=30
 break}r=p.a+=A.C7(o)
-p.a=r-1
-p.a=0
+p.a=B.f.cK(r,226)
 this.a8(new A.a1M(p,this))},
-Na(){this.a8(new A.a1L(this,B.ep.vR(33)))},
-N8(){this.a8(new A.a1K(this,B.ep.vR(18)))},
+Na(){this.a8(new A.a1L(this,B.ep.vR(45)))},
+N8(){this.a8(new A.a1K(this,B.ep.vR(35)))},
 nx(){var s=0,r=A.a_(t.H),q=this,p
 var $async$nx=A.a0(function(a,b){if(a===1)return A.X(b,r)
-while(true)switch(s){case 0:p=A.Ep(q.x[B.ep.vR(5)],0,null)
+while(true)switch(s){case 0:p=A.Ep(q.x[B.ep.vR(79)],0,null)
 s=2
 return A.a1(A.a4Q(p),$async$nx)
 case 2:if(!b)throw A.d("Could not launch "+p.h(0))
@@ -33168,7 +33167,7 @@ yB(a){return this.ih(a,B.X,null)},
 BD(a){var s,r=this
 r.w=a
 r.y=B.n
-r.x=A.O(a.cZ(0,0),r.a,r.b)
+r.x=A.O(a.d_(0,0),r.a,r.b)
 s=r.r.kE(0)
 r.Q=r.z===B.a0?B.al:B.a1
 r.nc()
@@ -33189,7 +33188,7 @@ s.mn(r)}},
 L9(a){var s,r=this
 r.y=a
 s=a.a/1e6
-r.x=A.O(r.w.cZ(0,s),r.a,r.b)
+r.x=A.O(r.w.d_(0,s),r.a,r.b)
 if(r.w.iP(s)){r.Q=r.z===B.a0?B.A:B.x
 r.kF(0,!1)}r.ad()
 r.nc()},
@@ -33203,13 +33202,13 @@ o=q.x
 o===$&&A.e()
 return A.h(p)+" "+B.d.L(o,3)+n+s+r}}
 A.a0V.prototype={
-cZ(a,b){var s,r,q=this,p=A.O(b/q.b,0,1)
+d_(a,b){var s,r,q=this,p=A.O(b/q.b,0,1)
 if(p===0)return q.c
 else{s=q.d
 if(p===1)return s
 else{r=q.c
 return r+(s-r)*q.e.X(0,p)}}},
-eM(a,b){return(this.cZ(0,b+0.001)-this.cZ(0,b-0.001))/0.002},
+eM(a,b){return(this.d_(0,b+0.001)-this.d_(0,b-0.001))/0.002},
 iP(a){return a>this.b}}
 A.EJ.prototype={}
 A.EK.prototype={}
@@ -33218,7 +33217,7 @@ A.EE.prototype={
 Y(a,b){},
 K(a,b){},
 fd(a){},
-cY(a){},
+cZ(a){},
 gaC(a){return B.A},
 gp(a){return 1},
 h(a){return"kAlwaysCompleteAnimation"}}
@@ -33226,7 +33225,7 @@ A.EF.prototype={
 Y(a,b){},
 K(a,b){},
 fd(a){},
-cY(a){},
+cZ(a){},
 gaC(a){return B.x},
 gp(a){return 0},
 h(a){return"kAlwaysDismissedAnimation"}}
@@ -33234,7 +33233,7 @@ A.pw.prototype={
 Y(a,b){return this.gaB(this).Y(0,b)},
 K(a,b){return this.gaB(this).K(0,b)},
 fd(a){return this.gaB(this).fd(a)},
-cY(a){return this.gaB(this).cY(a)},
+cZ(a){return this.gaB(this).cZ(a)},
 gaC(a){var s=this.gaB(this)
 return s.gaC(s)}}
 A.ti.prototype={
@@ -33258,7 +33257,7 @@ if(r!=null){r.Y(0,s.gfA())
 s.c.fd(s.gF4())}},
 ow(){var s=this,r=s.c
 if(r!=null){r.K(0,s.gfA())
-s.c.cY(s.gF4())}},
+s.c.cZ(s.gF4())}},
 gaC(a){var s=this.c
 if(s!=null)s=s.gaC(s)
 else{s=this.a
@@ -33276,7 +33275,7 @@ this.a.Y(0,b)},
 K(a,b){this.a.K(0,b)
 this.iA()},
 ov(){this.a.fd(this.gjE())},
-ow(){this.a.cY(this.gjE())},
+ow(){this.a.cZ(this.gjE())},
 nS(a){this.mn(this.B7(a))},
 gaC(a){var s=this.a
 return this.B7(s.gaC(s))},
@@ -33299,7 +33298,7 @@ gCh(){if(this.c!=null){var s=this.d
 if(s==null){s=this.a
 s=s.gaC(s)}s=s!==B.a1}else s=!0
 return s},
-m(){this.a.cY(this.gC0())},
+m(){this.a.cZ(this.gC0())},
 gp(a){var s=this,r=s.gCh()?s.b:s.c,q=s.a,p=q.gp(q)
 if(r==null)return p
 if(p===0||p===1)return p
@@ -33327,7 +33326,7 @@ r=p>=s.gp(s)
 break
 default:r=!1}if(r){p=q.a
 s=q.gjE()
-p.cY(s)
+p.cZ(s)
 p.K(0,q.gtZ())
 p=q.b
 q.a=p
@@ -33342,7 +33341,7 @@ q.f=p}if(r&&q.d!=null)q.d.$0()},
 gp(a){var s=this.a
 return s.gp(s)},
 m(){var s,r,q=this
-q.a.cY(q.gjE())
+q.a.cZ(q.gjE())
 s=q.gtZ()
 q.a.K(0,s)
 q.a=null
@@ -33366,10 +33365,10 @@ q.fd(s)},
 ow(){var s,r=this,q=r.a,p=r.gAq()
 q.K(0,p)
 s=r.gAr()
-q.cY(s)
+q.cZ(s)
 q=r.b
 q.K(0,p)
-q.cY(s)},
+q.cZ(s)},
 gaC(a){var s=this.b
 if(s.gaC(s)===B.al||s.gaC(s)===B.a1)return s.gaC(s)
 s=this.a
@@ -33466,7 +33465,7 @@ this.aL()
 s=this.bx$
 s.b=!0
 s.a.push(a)},
-cY(a){if(this.bx$.v(0,a))this.iA()},
+cZ(a){if(this.bx$.v(0,a))this.iA()},
 mn(a){var s,r,q,p,o,n,m,l,k=this,j=k.bx$,i=j.a,h=J.n1(i.slice(0),A.ae(i).c)
 for(i=h.length,p=0;p<h.length;h.length===i||(0,A.E)(h),++p){s=h[p]
 try{if(j.u(0,s))s.$1(a)}catch(o){r=A.af(o)
@@ -33488,23 +33487,23 @@ A.fw.prototype={
 X(a,b){return this.b.X(0,this.a.X(0,b))},
 h(a){return this.a.h(0)+"\u27a9"+this.b.h(0)}}
 A.ax.prototype={
-cX(a){var s=this.a
+cY(a){var s=this.a
 return A.r(this).j("ax.T").a(J.aeF(s,J.aeG(J.aeH(this.b,s),a)))},
 X(a,b){var s,r=this
 if(b===0){s=r.a
 return s==null?A.r(r).j("ax.T").a(s):s}if(b===1){s=r.b
-return s==null?A.r(r).j("ax.T").a(s):s}return r.cX(b)},
+return s==null?A.r(r).j("ax.T").a(s):s}return r.cY(b)},
 h(a){return"Animatable("+A.h(this.a)+" \u2192 "+A.h(this.b)+")"},
 suj(a){return this.a=a},
 seP(a,b){return this.b=b}}
 A.tD.prototype={
-cX(a){return this.c.cX(1-a)}}
+cY(a){return this.c.cY(1-a)}}
 A.fO.prototype={
-cX(a){return A.w(this.a,this.b,a)}}
+cY(a){return A.w(this.a,this.b,a)}}
 A.tq.prototype={
-cX(a){return A.ait(this.a,this.b,a)}}
+cY(a){return A.ait(this.a,this.b,a)}}
 A.jg.prototype={
-cX(a){var s,r=this.a
+cY(a){var s,r=this.a
 r.toString
 s=this.b
 s.toString
@@ -33695,7 +33694,7 @@ r.a.push(q)}else o.b.oy()}}
 A.a_T.prototype={
 $1(a){var s=this.a
 s.b.oy()
-s.a.cY(this.b.ab())},
+s.a.cZ(this.b.ab())},
 $S:2}
 A.fx.prototype={
 c_(a,b){var s
@@ -33747,7 +33746,7 @@ break
 default:n=null
 m=null}for(s=b.b,r=s+p,l=0,k=0;k<q;++k){if(B.f.ie(k,o)!==l)++l
 j=$.aF()?A.bl():new A.ba(new A.bf())
-i=A.w(h[l],h[l+1],B.f.d0(k,o)/o)
+i=A.w(h[l],h[l+1],B.f.cK(k,o)/o)
 i.toString
 j.sa5(0,i)
 i=n+m*k-1
@@ -34115,7 +34114,7 @@ ts(a){var s=this.a,r=s.length,q=a==null?0:a,p=Math.max(q,r*2),o=new Uint8Array(p
 B.D.cA(o,0,r,s)
 this.a=o},
 R5(){return this.ts(null)},
-f7(a){var s=B.f.d0(this.b,a)
+f7(a){var s=B.f.cK(this.b,a)
 if(s!==0)this.kP($.adD(),0,a-s)},
 hI(){var s,r=this
 if(r.c)throw A.d(A.a7("done() must not be called more than once on the same "+A.z(r).h(0)+"."))
@@ -34134,7 +34133,7 @@ q1(a){var s
 this.f7(8)
 s=this.a
 B.qH.CE(s.buffer,s.byteOffset+this.b,a)},
-f7(a){var s=this.b,r=B.f.d0(s,a)
+f7(a){var s=this.b,r=B.f.cK(s,a)
 if(r!==0)this.b=s+(a-r)}}
 A.fr.prototype={
 gt(a){var s=this
@@ -35356,7 +35355,7 @@ A.mR.prototype={
 jH(a,b){var s=(this.c+1)%20
 this.c=s
 this.d[s]=new A.vX(a,b)},
-tj(a){var s,r,q=this.c+a,p=B.f.d0(q,20),o=B.f.d0(q-1,20)
+tj(a){var s,r,q=this.c+a,p=B.f.cK(q,20),o=B.f.cK(q-1,20)
 q=this.d
 s=q[p]
 r=q[o]
@@ -35364,7 +35363,7 @@ if(s==null||r==null)return B.h
 q=s.a.a-r.a.a
 return q>0?s.b.W(0,r.b).V(0,1000).cz(0,q/1000):B.h},
 q4(){var s,r,q=this,p=q.tj(-2).V(0,0.6).S(0,q.tj(-1).V(0,0.35)).S(0,q.tj(0).V(0,0.05)),o=q.d,n=q.c,m=o[n]
-for(s=null,r=1;r<=20;++r){s=o[B.f.d0(n+r,20)]
+for(s=null,r=1;r<=20;++r){s=o[B.f.cK(n+r,20)]
 if(s!=null)break}if(s==null||m==null)return B.L5
 else return new A.oj(p,1,new A.aH(m.a.a-s.a.a),m.b.W(0,s.b))}}
 A.E7.prototype={
@@ -35532,14 +35531,14 @@ o=r===!0
 a4.a.toString
 n=a8.at
 if(n==null)n=56
-r=a9.gcQ(a9)
+r=a9.gcR(a9)
 m=t.jH
 l=A.ne(a5,s,m)
 m=l==null?A.ne(a8.b,s,m):l
 k=m==null?A.ne(r,s,t.iO):m
 a4.a.toString
 j=a8.c
-if(j==null)j=a9.gcU()
+if(j==null)j=a9.gcV()
 a4.a.toString
 i=a8.d
 if(i==null){r=a9.d
@@ -35629,7 +35628,7 @@ A.I3.prototype={
 bR(a){var s=a.D8(1/0)
 return a.bg(this.B$.fJ(s))},
 bP(){var s,r,q=this,p=A.M.prototype.gba.call(q).D8(1/0)
-q.B$.cV(p,!0)
+q.B$.cW(p,!0)
 s=A.M.prototype.gba.call(q)
 r=q.B$.k3
 r.toString
@@ -35645,19 +35644,19 @@ gjl(){var s,r=this,q=r.db
 if(q===$){s=r.gnU()
 r.db!==$&&A.bd()
 q=r.db=s.ay}return q},
-gcQ(a){return this.gjl().a===B.M?this.gjl().cy:this.gjl().b},
-gcU(){return this.gjl().a===B.M?this.gjl().db:this.gjl().c},
+gcR(a){return this.gjl().a===B.M?this.gjl().cy:this.gjl().b},
+gcV(){return this.gjl().a===B.M?this.gjl().db:this.gjl().c},
 gm5(){return this.gnU().p3},
 gmD(){return this.gnU().RG.z},
 gmC(){return this.gnU().RG.r}}
 A.mj.prototype={
 gt(a){var s=this
-return A.Q(s.a,s.gcQ(s),s.gcU(),s.d,s.e,s.f,s.ghm(),s.w,s.gm5(),s.gu2(),s.z,s.Q,s.as,s.at,s.gmD(),s.gmC(),s.ch,s.CW,B.a,B.a)},
+return A.Q(s.a,s.gcR(s),s.gcV(),s.d,s.e,s.f,s.ghm(),s.w,s.gm5(),s.gu2(),s.z,s.Q,s.as,s.at,s.gmD(),s.gmC(),s.ch,s.CW,B.a,B.a)},
 k(a,b){var s,r=this
 if(b==null)return!1
 if(r===b)return!0
 if(J.P(b)!==A.z(r))return!1
-if(b instanceof A.mj)if(J.f(b.gcQ(b),r.gcQ(r)))if(J.f(b.gcU(),r.gcU()))if(b.d==r.d)if(b.e==r.e)if(J.f(b.f,r.f))if(J.f(b.ghm(),r.ghm()))if(J.f(b.w,r.w))if(J.f(b.gm5(),r.gm5()))if(J.f(b.gu2(),r.gu2()))if(J.f(b.z,r.z))if(b.as==r.as)if(b.at==r.at)if(J.f(b.gmD(),r.gmD()))if(J.f(b.gmC(),r.gmC()))s=!0
+if(b instanceof A.mj)if(J.f(b.gcR(b),r.gcR(r)))if(J.f(b.gcV(),r.gcV()))if(b.d==r.d)if(b.e==r.e)if(J.f(b.f,r.f))if(J.f(b.ghm(),r.ghm()))if(J.f(b.w,r.w))if(J.f(b.gm5(),r.gm5()))if(J.f(b.gu2(),r.gu2()))if(J.f(b.z,r.z))if(b.as==r.as)if(b.at==r.at)if(J.f(b.gmD(),r.gmD()))if(J.f(b.gmC(),r.gmC()))s=!0
 else s=!1
 else s=!1
 else s=!1
@@ -35674,8 +35673,8 @@ else s=!1
 else s=!1
 else s=!1
 return s},
-gcQ(a){return this.b},
-gcU(){return this.c},
+gcR(a){return this.b},
+gcV(){return this.c},
 ghm(){return this.r},
 gm5(){return this.x},
 gu2(){return this.y},
@@ -35732,7 +35731,7 @@ suj(a){if(!J.f(a,this.a)){this.a=a
 this.c=!0}},
 seP(a,b){if(!J.f(b,this.b)){this.b=b
 this.c=!0}},
-cX(a){var s,r,q,p,o=this
+cY(a){var s,r,q,p,o=this
 if(o.c)o.fU()
 if(a===0){s=o.a
 s.toString
@@ -35796,7 +35795,7 @@ suj(a){if(!J.f(a,this.a)){this.a=a
 this.e=!0}},
 seP(a,b){if(!J.f(b,this.b)){this.b=b
 this.e=!0}},
-cX(a){var s,r,q=this
+cY(a){var s,r,q=this
 if(q.e)q.fU()
 if(a===0){s=q.a
 s.toString
@@ -35804,10 +35803,10 @@ return s}if(a===1){s=q.b
 s.toString
 return s}s=q.f
 s===$&&A.e()
-s=s.cX(a)
+s=s.cY(a)
 r=q.r
 r===$&&A.e()
-return A.a6i(s,r.cX(a))},
+return A.a6i(s,r.cY(a))},
 h(a){var s=this
 return"MaterialRectArcTween("+A.h(s.a)+" \u2192 "+A.h(s.b)+"; beginArc="+A.h(s.gT0())+", endArc="+A.h(s.gUl())+")"}}
 A.Sm.prototype={
@@ -35980,15 +35979,15 @@ return s}}
 A.EZ.prototype={}
 A.b7.prototype={
 gt(a){var s=this
-return A.Q(s.gpN(),s.gcQ(s),s.gcU(),s.gpq(),s.gib(s),s.ghm(),s.gfo(s),s.gcw(s),s.gpe(),s.y,s.gpc(),s.Q,s.gcp(s),s.gpf(),s.gpV(),s.gpL(),s.ch,s.CW,s.cx,s.gmZ())},
+return A.Q(s.gpN(),s.gcR(s),s.gcV(),s.gpq(),s.gib(s),s.ghm(),s.gfo(s),s.gcw(s),s.gpe(),s.y,s.gpc(),s.Q,s.gcp(s),s.gpf(),s.gpV(),s.gpL(),s.ch,s.CW,s.cx,s.gmZ())},
 k(a,b){var s=this
 if(b==null)return!1
 if(s===b)return!0
 if(J.P(b)!==A.z(s))return!1
-return b instanceof A.b7&&b.gpN()==s.gpN()&&J.f(b.gcQ(b),s.gcQ(s))&&b.gcU()==s.gcU()&&b.gpq()==s.gpq()&&b.gib(b)==s.gib(s)&&b.ghm()==s.ghm()&&b.gfo(b)==s.gfo(s)&&b.gcw(b)==s.gcw(s)&&b.gpe()==s.gpe()&&b.y==s.y&&b.gpc()==s.gpc()&&b.Q==s.Q&&b.gcp(b)==s.gcp(s)&&b.gpf()==s.gpf()&&J.f(b.gpV(),s.gpV())&&b.gpL()==s.gpL()&&J.f(b.ch,s.ch)&&b.CW==s.CW&&J.f(b.cx,s.cx)&&b.gmZ()==s.gmZ()},
+return b instanceof A.b7&&b.gpN()==s.gpN()&&J.f(b.gcR(b),s.gcR(s))&&b.gcV()==s.gcV()&&b.gpq()==s.gpq()&&b.gib(b)==s.gib(s)&&b.ghm()==s.ghm()&&b.gfo(b)==s.gfo(s)&&b.gcw(b)==s.gcw(s)&&b.gpe()==s.gpe()&&b.y==s.y&&b.gpc()==s.gpc()&&b.Q==s.Q&&b.gcp(b)==s.gcp(s)&&b.gpf()==s.gpf()&&J.f(b.gpV(),s.gpV())&&b.gpL()==s.gpL()&&J.f(b.ch,s.ch)&&b.CW==s.CW&&J.f(b.cx,s.cx)&&b.gmZ()==s.gmZ()},
 gpN(){return this.a},
-gcQ(a){return this.b},
-gcU(){return this.c},
+gcR(a){return this.b},
+gcV(){return this.c},
 gpq(){return this.d},
 gib(a){return this.e},
 ghm(){return this.f},
@@ -36139,10 +36138,10 @@ A.a_k.prototype={
 $1(a){return a==null?null:a.gpN()},
 $S:151}
 A.a_l.prototype={
-$1(a){return a==null?null:a.gcQ(a)},
+$1(a){return a==null?null:a.gcR(a)},
 $S:33}
 A.a_w.prototype={
-$1(a){return a==null?null:a.gcU()},
+$1(a){return a==null?null:a.gcV()},
 $S:33}
 A.a_x.prototype={
 $1(a){return a==null?null:a.gib(a)},
@@ -36249,7 +36248,7 @@ $2(a,b){return this.a.B$.br(a,this.b)},
 $S:12}
 A.wZ.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -36544,9 +36543,9 @@ A.lP.prototype={
 h(a){return"_FloatingActionButtonType."+this.b}}
 A.A1.prototype={
 N(a6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this,a0=null,a1=A.aX(a6),a2=a1.fq,a3=a.k1,a4=new A.a0h(a3,!0,A.aX(a6),A.aX(a6).ay,a0,a0,a0,a0,a0,6,6,8,a0,12,a0,!0,a0,B.uY,B.uX,B.uZ,B.v_,8,a0,a0),a5=a2.a
-if(a5==null)a5=a4.gcU()
+if(a5==null)a5=a4.gcV()
 s=a2.b
-if(s==null)s=a4.gcQ(a4)
+if(s==null)s=a4.gcR(a4)
 r=a2.c
 if(r==null)r=a4.glX()
 q=a2.d
@@ -36619,13 +36618,13 @@ bR(a){var s,r=this.B$,q=a.a,p=a.b,o=a.c,n=a.d
 if(r!=null){s=r.fJ(B.bN)
 return new A.S(Math.max(q,Math.min(p,s.a)),Math.max(o,Math.min(n,s.b)))}else return new A.S(A.O(1/0,q,p),A.O(1/0,o,n))},
 bP(){var s=this,r=A.M.prototype.gba.call(s),q=s.B$,p=r.a,o=r.b,n=r.c,m=r.d
-if(q!=null){q.cV(B.bN,!0)
+if(q!=null){q.cW(B.bN,!0)
 q=s.B$.k3
 s.k3=new A.S(Math.max(p,Math.min(o,q.a)),Math.max(n,Math.min(m,q.b)))
 s.u8()}else s.k3=new A.S(A.O(1/0,p,o),A.O(1/0,n,m))}}
 A.a0h.prototype={
-gcU(){return this.fr.r},
-gcQ(a){return this.fr.f},
+gcV(){return this.fr.r},
+gcR(a){return this.fr.f},
 glX(){return this.dy.db},
 gm3(){return this.dy.fr},
 gkC(){return this.dy.ok},
@@ -36660,14 +36659,14 @@ A.K1.prototype={}
 A.K2.prototype={}
 A.mL.prototype={
 gt(a){var s=this
-return A.Q(s.gcU(),s.gcQ(s),s.glX(),s.gm3(),s.gkC(),s.f,s.r,s.w,s.x,s.y,s.gcp(s),s.Q,s.gm4(),s.at,s.ax,s.ay,s.ch,s.CW,s.glS(),s.glT())},
+return A.Q(s.gcV(),s.gcR(s),s.glX(),s.gm3(),s.gkC(),s.f,s.r,s.w,s.x,s.y,s.gcp(s),s.Q,s.gm4(),s.at,s.ax,s.ay,s.ch,s.CW,s.glS(),s.glT())},
 k(a,b){var s=this
 if(b==null)return!1
 if(s===b)return!0
 if(J.P(b)!==A.z(s))return!1
-return b instanceof A.mL&&J.f(b.gcU(),s.gcU())&&J.f(b.gcQ(b),s.gcQ(s))&&J.f(b.glX(),s.glX())&&J.f(b.gm3(),s.gm3())&&J.f(b.gkC(),s.gkC())&&b.f==s.f&&b.r==s.r&&b.w==s.w&&b.x==s.x&&b.y==s.y&&J.f(b.gcp(b),s.gcp(s))&&b.Q==s.Q&&b.gm4()==s.gm4()&&J.f(b.at,s.at)&&J.f(b.ax,s.ax)&&J.f(b.ay,s.ay)&&J.f(b.ch,s.ch)&&b.CW==s.CW&&J.f(b.glS(),s.glS())&&J.f(b.glT(),s.glT())},
-gcU(){return this.a},
-gcQ(a){return this.b},
+return b instanceof A.mL&&J.f(b.gcV(),s.gcV())&&J.f(b.gcR(b),s.gcR(s))&&J.f(b.glX(),s.glX())&&J.f(b.gm3(),s.gm3())&&J.f(b.gkC(),s.gkC())&&b.f==s.f&&b.r==s.r&&b.w==s.w&&b.x==s.x&&b.y==s.y&&J.f(b.gcp(b),s.gcp(s))&&b.Q==s.Q&&b.gm4()==s.gm4()&&J.f(b.at,s.at)&&J.f(b.ax,s.ax)&&J.f(b.ay,s.ay)&&J.f(b.ch,s.ch)&&b.CW==s.CW&&J.f(b.glS(),s.glS())&&J.f(b.glT(),s.glT())},
+gcV(){return this.a},
+gcR(a){return this.b},
 glX(){return this.c},
 gm3(){return this.d},
 gkC(){return this.e},
@@ -37117,7 +37116,7 @@ if(r!=null)r.aA(0)
 s.e=null
 s.a.toString
 s.kr(B.dX,!1)},
-cS(){var s,r,q,p,o,n,m,l=this,k=l.d
+cT(){var s,r,q,p,o,n,m,l=this,k=l.d
 if(k!=null){l.d=null
 for(k=new A.lU(k,k.nd()),s=A.r(k).c;k.q();){r=k.d;(r==null?s.a(r):r).m()}l.e=null}for(k=l.r,s=A.n8(k,k.r);s.q();){r=s.d
 q=k.i(0,r)
@@ -37223,7 +37222,7 @@ A.Ax.prototype={}
 A.x2.prototype={
 aH(){this.bk()
 if(this.gwW())this.ru()},
-cS(){var s=this.bo$
+cT(){var s=this.bo$
 if(s!=null){s.ad()
 this.bo$=null}this.n5()}}
 A.A3.prototype={
@@ -37356,7 +37355,7 @@ for(o=l.length-1;o>0;o=n){n=o-1
 l[o].ee(l[n],p)}this.wf(a,p)},
 h(a){return"<optimized out>#"+A.bB(this)}}
 A.lu.prototype={
-cX(a){return A.dL(this.a,this.b,a)}}
+cY(a){return A.dL(this.a,this.b,a)}}
 A.vB.prototype={
 ae(){return new A.GM(null,null,B.l)}}
 A.GM.prototype={
@@ -37407,7 +37406,7 @@ aq(a,b){this.b.fB(a,new A.A(0,0,0+b.a,0+b.b),this.c)},
 mW(a){return!a.b.k(0,this.b)}}
 A.K6.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -37655,14 +37654,14 @@ A.EU.prototype={
 N(a){return this.c}}
 A.a2A.prototype={
 pw(a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this,a=A.a5v(a3),a0=a3.a,a1=a.wC(a0),a2=a3.b
-if(b.b.i(0,B.dZ)!=null){s=b.cW(B.dZ,a1).b
+if(b.b.i(0,B.dZ)!=null){s=b.cX(B.dZ,a1).b
 b.dc(B.dZ,B.h)
 r=s}else{r=0
-s=0}if(b.b.i(0,B.jV)!=null){q=0+b.cW(B.jV,a1).b
+s=0}if(b.b.i(0,B.jV)!=null){q=0+b.cX(B.jV,a1).b
 p=Math.max(0,a2-q)
 b.dc(B.jV,new A.v(0,p))}else{q=0
-p=null}if(b.b.i(0,B.jU)!=null){q+=b.cW(B.jU,new A.aM(0,a1.b,0,Math.max(0,a2-q-r))).b
-b.dc(B.jU,new A.v(0,Math.max(0,a2-q)))}if(b.b.i(0,B.e2)!=null){o=b.cW(B.e2,a1)
+p=null}if(b.b.i(0,B.jU)!=null){q+=b.cX(B.jU,new A.aM(0,a1.b,0,Math.max(0,a2-q-r))).b
+b.dc(B.jU,new A.v(0,Math.max(0,a2-q)))}if(b.b.i(0,B.e2)!=null){o=b.cX(B.e2,a1)
 b.dc(B.e2,new A.v(0,s))
 if(!b.ay)r+=o.b}else o=B.z
 n=b.f
@@ -37671,26 +37670,26 @@ if(b.b.i(0,B.dY)!=null){l=Math.max(0,m-r)
 k=b.d
 if(k)l=A.O(l+q,0,a.d-r)
 k=k?q:0
-b.cW(B.dY,new A.uV(k,s,o.b,0,a1.b,0,l))
-b.dc(B.dY,new A.v(0,r))}if(b.b.i(0,B.e0)!=null){b.cW(B.e0,new A.aM(0,a1.b,0,m))
-b.dc(B.e0,B.h)}j=b.b.i(0,B.bM)!=null&&!b.at?b.cW(B.bM,a1):B.z
-if(b.b.i(0,B.e1)!=null){i=b.cW(B.e1,new A.aM(0,a1.b,0,Math.max(0,m-r)))
+b.cX(B.dY,new A.uV(k,s,o.b,0,a1.b,0,l))
+b.dc(B.dY,new A.v(0,r))}if(b.b.i(0,B.e0)!=null){b.cX(B.e0,new A.aM(0,a1.b,0,m))
+b.dc(B.e0,B.h)}j=b.b.i(0,B.bM)!=null&&!b.at?b.cX(B.bM,a1):B.z
+if(b.b.i(0,B.e1)!=null){i=b.cX(B.e1,new A.aM(0,a1.b,0,Math.max(0,m-r)))
 b.dc(B.e1,new A.v((a0-i.a)/2,m-i.b))}else i=B.z
 h=A.bb("floatingActionButtonRect")
-if(b.b.i(0,B.e3)!=null){g=b.cW(B.e3,a)
+if(b.b.i(0,B.e3)!=null){g=b.cX(B.e3,a)
 f=new A.VM(g,i,m,n,b.r,a3,j,b.w)
 e=b.z.x3(f)
 d=b.as.Gp(b.y.x3(f),e,b.Q)
 b.dc(B.e3,d)
 a0=d.a
 k=d.b
-h.b=new A.A(a0,k,a0+g.a,k+g.b)}if(b.b.i(0,B.bM)!=null){if(j.k(0,B.z))j=b.cW(B.bM,a1)
+h.b=new A.A(a0,k,a0+g.a,k+g.b)}if(b.b.i(0,B.bM)!=null){if(j.k(0,B.z))j=b.cX(B.bM,a1)
 a0=h.ab()
 if(!new A.S(a0.c-a0.a,a0.d-a0.b).k(0,B.z)&&b.at)c=h.ab().b
 else c=b.at?Math.min(m,a2-b.r.d):m
-b.dc(B.bM,new A.v(0,c-j.b))}if(b.b.i(0,B.e_)!=null){b.cW(B.e_,a1.wB(n.b))
-b.dc(B.e_,B.h)}if(b.b.i(0,B.jW)!=null){b.cW(B.jW,A.xT(a3))
-b.dc(B.jW,B.h)}if(b.b.i(0,B.jT)!=null){b.cW(B.jT,A.xT(a3))
+b.dc(B.bM,new A.v(0,c-j.b))}if(b.b.i(0,B.e_)!=null){b.cX(B.e_,a1.wB(n.b))
+b.dc(B.e_,B.h)}if(b.b.i(0,B.jW)!=null){b.cX(B.jW,A.xT(a3))
+b.dc(B.jW,B.h)}if(b.b.i(0,B.jT)!=null){b.cX(B.jT,A.xT(a3))
 b.dc(B.jT,B.h)}b.x.Sx(p,h.ab())},
 kB(a){var s=this
 return!a.f.k(0,s.f)||!a.r.k(0,s.r)||a.w!==s.w||a.Q!==s.Q||a.y!==s.y||a.z!==s.z||a.d!==s.d||!1}}
@@ -37986,7 +37985,7 @@ $2(a,b){if(!a.a)a.K(0,b)},
 $S:30}
 A.w9.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -37994,7 +37993,7 @@ s.aM$=null
 s.aV()}}
 A.wa.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -38022,7 +38021,7 @@ r.aY$=null
 r.K6()}}
 A.x0.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -38457,7 +38456,7 @@ return new A.vn(this,new A.yR(new A.Sk(q,new A.Bh(p,o,n,m,l,k),B.kA,p,o,n,m,l,k)
 A.vn.prototype={
 bA(a){return!this.w.c.k(0,a.w.c)}}
 A.lE.prototype={
-cX(u2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,g0,g1,g2,g3,g4,g5,g6,g7,g8,g9,h0,h1,h2,h3,h4,h5,h6,h7,h8,h9,i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,j0,j1,j2,j3,j4,j5,j6,j7,j8,j9,k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,l0,l1,l2,l3,l4,l5,l6,l7,l8,l9,m0,m1,m2,m3,m4,m5,m6,m7,m8,m9,n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,u0,u1=this.a
+cY(u2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,g0,g1,g2,g3,g4,g5,g6,g7,g8,g9,h0,h1,h2,h3,h4,h5,h6,h7,h8,h9,i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,j0,j1,j2,j3,j4,j5,j6,j7,j8,j9,k0,k1,k2,k3,k4,k5,k6,k7,k8,k9,l0,l1,l2,l3,l4,l5,l6,l7,l8,l9,m0,m1,m2,m3,m4,m5,m6,m7,m8,m9,n0,n1,n2,n3,n4,n5,n6,n7,n8,n9,o0,o1,o2,o3,o4,o5,o6,o7,o8,o9,p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,u0,u1=this.a
 u1.toString
 s=this.b
 s.toString
@@ -39443,7 +39442,7 @@ if(s)if($.ir.length!==0)B.b.gJ($.ir).B6()},
 Oy(a){if(this.at==null)return
 if(t.E.b(a)||t.AJ.b(a))this.ns()
 else if(t.Y.b(a))this.zW(!0)},
-cS(){var s,r=this
+cT(){var s,r=this
 if(r.at!=null)r.rp(!0)
 s=r.ay
 if(s!=null)s.aA(0)
@@ -39553,7 +39552,7 @@ if(r!=null)r.K(0,s.go_())
 s.eS$=null
 s.aV()},
 bX(){this.dH()
-this.cN()
+this.cO()
 this.o0()}}
 A.uB.prototype={
 gt(a){var s=this,r=null
@@ -39653,14 +39652,14 @@ Y(a,b){this.a.D(0,b)},
 K(a,b){this.a.v(0,b)}}
 A.pE.prototype={
 qr(a){var s=this
-return new A.vF(s.gcL().W(0,a.gcL()),s.geb().W(0,a.geb()),s.ge6().W(0,a.ge6()),s.geA().W(0,a.geA()),s.gcM().W(0,a.gcM()),s.gea().W(0,a.gea()),s.geB().W(0,a.geB()),s.ge5().W(0,a.ge5()))},
+return new A.vF(s.gcM().W(0,a.gcM()),s.geb().W(0,a.geb()),s.ge6().W(0,a.ge6()),s.geA().W(0,a.geA()),s.gcN().W(0,a.gcN()),s.gea().W(0,a.gea()),s.geB().W(0,a.geB()),s.ge5().W(0,a.ge5()))},
 D(a,b){var s=this
-return new A.vF(s.gcL().S(0,b.gcL()),s.geb().S(0,b.geb()),s.ge6().S(0,b.ge6()),s.geA().S(0,b.geA()),s.gcM().S(0,b.gcM()),s.gea().S(0,b.gea()),s.geB().S(0,b.geB()),s.ge5().S(0,b.ge5()))},
+return new A.vF(s.gcM().S(0,b.gcM()),s.geb().S(0,b.geb()),s.ge6().S(0,b.ge6()),s.geA().S(0,b.geA()),s.gcN().S(0,b.gcN()),s.gea().S(0,b.gea()),s.geB().S(0,b.geB()),s.ge5().S(0,b.ge5()))},
 h(a){var s,r,q,p,o=this
-if(o.gcL().k(0,o.geb())&&o.geb().k(0,o.ge6())&&o.ge6().k(0,o.geA()))if(!o.gcL().k(0,B.H))s=o.gcL().a===o.gcL().b?"BorderRadius.circular("+B.d.L(o.gcL().a,1)+")":"BorderRadius.all("+o.gcL().h(0)+")"
+if(o.gcM().k(0,o.geb())&&o.geb().k(0,o.ge6())&&o.ge6().k(0,o.geA()))if(!o.gcM().k(0,B.H))s=o.gcM().a===o.gcM().b?"BorderRadius.circular("+B.d.L(o.gcM().a,1)+")":"BorderRadius.all("+o.gcM().h(0)+")"
 else s=null
 else{r=""+"BorderRadius.only("
-if(!o.gcL().k(0,B.H)){r+="topLeft: "+o.gcL().h(0)
+if(!o.gcM().k(0,B.H)){r+="topLeft: "+o.gcM().h(0)
 q=!0}else q=!1
 if(!o.geb().k(0,B.H)){if(q)r+=", "
 r+="topRight: "+o.geb().h(0)
@@ -39668,10 +39667,10 @@ q=!0}if(!o.ge6().k(0,B.H)){if(q)r+=", "
 r+="bottomLeft: "+o.ge6().h(0)
 q=!0}if(!o.geA().k(0,B.H)){if(q)r+=", "
 r+="bottomRight: "+o.geA().h(0)}r+=")"
-s=r.charCodeAt(0)==0?r:r}if(o.gcM().k(0,o.gea())&&o.gea().k(0,o.ge5())&&o.ge5().k(0,o.geB()))if(!o.gcM().k(0,B.H))p=o.gcM().a===o.gcM().b?"BorderRadiusDirectional.circular("+B.d.L(o.gcM().a,1)+")":"BorderRadiusDirectional.all("+o.gcM().h(0)+")"
+s=r.charCodeAt(0)==0?r:r}if(o.gcN().k(0,o.gea())&&o.gea().k(0,o.ge5())&&o.ge5().k(0,o.geB()))if(!o.gcN().k(0,B.H))p=o.gcN().a===o.gcN().b?"BorderRadiusDirectional.circular("+B.d.L(o.gcN().a,1)+")":"BorderRadiusDirectional.all("+o.gcN().h(0)+")"
 else p=null
 else{r=""+"BorderRadiusDirectional.only("
-if(!o.gcM().k(0,B.H)){r+="topStart: "+o.gcM().h(0)
+if(!o.gcN().k(0,B.H)){r+="topStart: "+o.gcN().h(0)
 q=!0}else q=!1
 if(!o.gea().k(0,B.H)){if(q)r+=", "
 r+="topEnd: "+o.gea().h(0)
@@ -39688,15 +39687,15 @@ k(a,b){var s=this
 if(b==null)return!1
 if(s===b)return!0
 if(J.P(b)!==A.z(s))return!1
-return b instanceof A.pE&&b.gcL().k(0,s.gcL())&&b.geb().k(0,s.geb())&&b.ge6().k(0,s.ge6())&&b.geA().k(0,s.geA())&&b.gcM().k(0,s.gcM())&&b.gea().k(0,s.gea())&&b.geB().k(0,s.geB())&&b.ge5().k(0,s.ge5())},
+return b instanceof A.pE&&b.gcM().k(0,s.gcM())&&b.geb().k(0,s.geb())&&b.ge6().k(0,s.ge6())&&b.geA().k(0,s.geA())&&b.gcN().k(0,s.gcN())&&b.gea().k(0,s.gea())&&b.geB().k(0,s.geB())&&b.ge5().k(0,s.ge5())},
 gt(a){var s=this
-return A.Q(s.gcL(),s.geb(),s.ge6(),s.geA(),s.gcM(),s.gea(),s.geB(),s.ge5(),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)}}
+return A.Q(s.gcM(),s.geb(),s.ge6(),s.geA(),s.gcN(),s.gea(),s.geB(),s.ge5(),B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a,B.a)}}
 A.cu.prototype={
-gcL(){return this.a},
+gcM(){return this.a},
 geb(){return this.b},
 ge6(){return this.c},
 geA(){return this.d},
-gcM(){return B.H},
+gcN(){return B.H},
 gea(){return B.H},
 geB(){return B.H},
 ge5(){return B.H},
@@ -39719,11 +39718,11 @@ return new A.vF(s.a.V(0,b),s.b.V(0,b),s.c.V(0,b),s.d.V(0,b),s.e.V(0,b),s.f.V(0,b
 R(a){var s=this
 switch(a.a){case 0:return new A.cu(s.a.S(0,s.f),s.b.S(0,s.e),s.c.S(0,s.w),s.d.S(0,s.r))
 case 1:return new A.cu(s.a.S(0,s.e),s.b.S(0,s.f),s.c.S(0,s.r),s.d.S(0,s.w))}},
-gcL(){return this.a},
+gcM(){return this.a},
 geb(){return this.b},
 ge6(){return this.c},
 geA(){return this.d},
-gcM(){return this.e},
+gcN(){return this.e},
 gea(){return this.f},
 geB(){return this.r},
 ge5(){return this.w}}
@@ -41369,7 +41368,7 @@ s=A.dw(s)}return A.Q(r.a,r.b,r.c,r.r,r.w,r.x,r.y,r.z,r.Q,r.as,r.at,r.ax,r.ay,r.c
 bH(){return"TextStyle"}}
 A.Jc.prototype={}
 A.PX.prototype={
-cZ(a,b){var s=this,r=s.e,q=s.c
+d_(a,b){var s=this,r=s.e,q=s.c
 return s.d+r*Math.pow(s.b,b)/q-r/q},
 eM(a,b){return this.e*Math.pow(this.b,b)},
 gv9(){return this.d-this.e/this.c},
@@ -41391,27 +41390,27 @@ h(a){return"SpringDescription(mass: "+B.d.L(this.a,1)+", stiffness: "+B.f.L(this
 A.nW.prototype={
 h(a){return"SpringType."+this.b}}
 A.DL.prototype={
-cZ(a,b){return this.b+this.c.cZ(0,b)},
+d_(a,b){return this.b+this.c.d_(0,b)},
 eM(a,b){return this.c.eM(0,b)},
 iP(a){var s=this.c
-return A.xm(s.cZ(0,a),0,this.a.a)&&A.xm(s.eM(0,a),0,this.a.c)},
+return A.xm(s.d_(0,a),0,this.a.a)&&A.xm(s.eM(0,a),0,this.a.c)},
 h(a){var s=this.c
 return"SpringSimulation(end: "+B.d.L(this.b,1)+", "+s.gpS(s).h(0)+")"}}
 A.lo.prototype={
-cZ(a,b){return this.iP(b)?this.b:this.Jw(0,b)}}
+d_(a,b){return this.iP(b)?this.b:this.Jw(0,b)}}
 A.a_S.prototype={
-cZ(a,b){return(this.b+this.c*b)*Math.pow(2.718281828459045,this.a*b)},
+d_(a,b){return(this.b+this.c*b)*Math.pow(2.718281828459045,this.a*b)},
 eM(a,b){var s=this.a,r=Math.pow(2.718281828459045,s*b),q=this.c
 return s*(this.b+q*b)*r+q*r},
 gpS(a){return B.FN}}
 A.a1R.prototype={
-cZ(a,b){var s=this
+d_(a,b){var s=this
 return s.c*Math.pow(2.718281828459045,s.a*b)+s.d*Math.pow(2.718281828459045,s.b*b)},
 eM(a,b){var s=this,r=s.a,q=s.b
 return s.c*r*Math.pow(2.718281828459045,r*b)+s.d*q*Math.pow(2.718281828459045,q*b)},
 gpS(a){return B.FP}}
 A.a34.prototype={
-cZ(a,b){var s=this,r=s.a*b
+d_(a,b){var s=this,r=s.a*b
 return Math.pow(2.718281828459045,s.b*b)*(s.c*Math.cos(r)+s.d*Math.sin(r))},
 eM(a,b){var s,r=this,q=r.b,p=Math.pow(2.718281828459045,q*b),o=r.a,n=o*b,m=Math.cos(n),l=Math.sin(n)
 n=r.d
@@ -41592,13 +41591,13 @@ return!0}return!1},
 a2(){var s=this
 if(s.LQ()&&s.c instanceof A.M){s.pb()
 return}s.IZ()},
-cV(a,b){var s,r=this
+cW(a,b){var s,r=this
 if(r.k3!=null)if(!a.k(0,A.M.prototype.gba.call(r))){s=r.k4
 s=s!=null&&s.a!==0}else s=!1
 else s=!1
 if(s){s=r.k4
 if(s!=null)s.I(0)}r.IY(a,b)},
-hU(a){return this.cV(a,!1)},
+hU(a){return this.cW(a,!1)},
 px(){this.k3=this.bR(A.M.prototype.gba.call(this))},
 bP(){},
 br(a,b){var s=this
@@ -41669,8 +41668,8 @@ aa(a){this.IH(0)}}
 A.eG.prototype={
 h(a){return this.n1(0)+"; id="+A.h(this.e)}}
 A.SQ.prototype={
-cW(a,b){var s,r=this.b.i(0,a)
-r.cV(b,!0)
+cX(a,b){var s,r=this.b.i(0,a)
+r.cW(b,!0)
 s=r.k3
 s.toString
 return s},
@@ -42680,7 +42679,7 @@ p.aR()}catch(q){s=A.af(q)
 r=A.aw(q)
 p.ng("performLayout",s,r)}p.z=!1
 p.af()},
-cV(a,b){var s,r,q,p,o,n,m,l,k=this
+cW(a,b){var s,r,q,p,o,n,m,l,k=this
 if(b)if(!k.gjf()){o=a.a>=a.b&&a.c>=a.d||!(k.c instanceof A.M)
 n=o}else n=!0
 else n=!0
@@ -43259,7 +43258,7 @@ if(j===0)return A.a([],t.aE)
 s=k.aO$
 r=A.bk(j,B.Ed,!1,t.cP)
 q=new A.aM(0,a.b,0,1/0).cz(0,k.G.f)
-for(j=A.r(k).j("bv.1"),p=!b,o=0;s!=null;){if(p){s.cV(q,!0)
+for(j=A.r(k).j("bv.1"),p=!b,o=0;s!=null;){if(p){s.cW(q,!0)
 n=s.k3
 n.toString
 m=k.aN
@@ -43679,7 +43678,7 @@ bR(a){var s=this.B$
 if(s!=null)return s.fJ(a)
 return this.lv(a)},
 bP(){var s=this,r=s.B$
-if(r!=null){r.cV(A.M.prototype.gba.call(s),!0)
+if(r!=null){r.cW(A.M.prototype.gba.call(s),!0)
 r=s.B$.k3
 r.toString
 s.k3=r}else s.k3=s.lv(A.M.prototype.gba.call(s))},
@@ -43703,7 +43702,7 @@ sCy(a){if(this.A.k(0,a))return
 this.A=a
 this.a2()},
 bP(){var s=this,r=A.M.prototype.gba.call(s),q=s.B$,p=s.A
-if(q!=null){q.cV(p.lO(r),!0)
+if(q!=null){q.cW(p.lO(r),!0)
 q=s.B$.k3
 q.toString
 s.k3=q}else s.k3=p.lO(r).bg(B.z)},
@@ -44442,7 +44441,7 @@ m.k3=l.bg(new A.S(s.a+s.c,s.b+s.d))
 return}s=m.A
 s.toString
 r=l.Do(s)
-m.B$.cV(r,!0)
+m.B$.cW(r,!0)
 s=m.B$
 q=s.e
 q.toString
@@ -44498,7 +44497,7 @@ r=s.b*r}else r=1/0
 return a.bg(new A.S(n,r))}n=p?0:1/0
 return a.bg(new A.S(n,o?0:1/0))},
 bP(){var s,r,q=this,p=A.M.prototype.gba.call(q),o=q.bn!=null||p.b===1/0,n=q.bo!=null||p.d===1/0,m=q.B$
-if(m!=null){m.cV(new A.aM(0,p.b,0,p.d),!0)
+if(m!=null){m.cW(new A.aM(0,p.b,0,p.d),!0)
 if(o){m=q.B$.k3.a
 s=q.bn
 m*=s==null?1:s}else m=1/0
@@ -44527,7 +44526,7 @@ k.toString
 r=s.a
 q=s.b
 p=r>=q
-k.cV(s,!(p&&s.c>=s.d))
+k.cW(s,!(p&&s.c>=s.d))
 k=l.B$
 o=k.e
 o.toString
@@ -45648,7 +45647,7 @@ var $async$iT=A.a0(function(c,d){if(c===1)return A.X(d,r)
 while(true)switch(s){case 0:s=3
 return A.a1(p.cc(0,a),$async$iT)
 case 3:o=d
-if(o.byteLength<51200){q=B.G.cT(0,A.cg(o.buffer,0,null))
+if(o.byteLength<51200){q=B.G.cU(0,A.cg(o.buffer,0,null))
 s=1
 break}q=A.KT(A.am0(),o,'UTF8 decode for "'+a+'"',t.B6,t.N)
 s=1
@@ -45940,7 +45939,7 @@ dP(a){var s
 if(a==null)return a
 s=B.eo.dP(a)
 s.toString
-return B.aK.cT(0,s)}}
+return B.aK.cU(0,s)}}
 A.Rq.prototype={
 eO(a){var s=B.aX.bm(A.aO(["method",a.a,"args",a.b],t.N,t.X))
 s.toString
@@ -47691,7 +47690,7 @@ aX(a){var s,r,q=this
 q.bB(a)
 s=a.c
 if(s!==q.a.c){r=q.gqR()
-s.cY(r)
+s.cZ(r)
 s=q.a.c
 s.aL()
 s=s.bx$
@@ -47712,7 +47711,7 @@ break
 case 2:case 3:s.e.saB(0,B.bR)
 s.f.saB(0,new A.fn(s.a.c,new A.bh(A.a([],t.A),t.T),0))
 break}},
-m(){this.a.c.cY(this.gqR())
+m(){this.a.c.cZ(this.gqR())
 this.aV()},
 N(a){var s=this.a
 return s.UW(a,this.e,s.Xw(a,this.f,s.f))}}
@@ -48065,7 +48064,7 @@ if(q!=null)q.x.push(new A.ET(s,r))
 s=s.w
 if(s!=null)s.nD()
 p.x=!0}},
-cS(){this.n5()
+cT(){this.n5()
 var s=this.y
 if(s!=null)s.pD()
 this.x=!1},
@@ -48548,7 +48547,7 @@ aH(){},
 aX(a){},
 a8(a){a.$0()
 this.c.hW()},
-cS(){},
+cT(){},
 bX(){},
 m(){},
 b0(){}}
@@ -48725,7 +48724,7 @@ uB(a){var s
 a.a=null
 a.lF()
 s=this.r.b
-if(a.w===B.bf){a.cS()
+if(a.w===B.bf){a.cT()
 a.aU(A.a4D())}s.b.D(0,a)},
 iK(a){},
 bX(){var s=this,r=s.z,q=r==null,p=!q&&r.a!==0||s.Q
@@ -48736,7 +48735,7 @@ s.tP()
 s.ui()
 if(s.as)s.r.xf(s)
 if(p)s.b0()},
-cS(){var s,r,q=this,p=q.z
+cT(){var s,r,q=this,p=q.z
 if(p!=null&&p.a!==0)for(p=new A.lU(p,p.nd()),s=A.r(p).c;p.q();){r=p.d;(r==null?s.a(r):r).bJ.v(0,q)}q.y=null
 q.w=B.Ln},
 mF(){var s=this,r=s.f,q=r==null?null:r.a
@@ -48881,7 +48880,7 @@ r=q.aX(s)}finally{o.ay=!1}o.mw()},
 bX(){this.I4()
 this.p2.bX()
 this.hW()},
-cS(){this.p2.cS()
+cT(){this.p2.cT()
 this.xJ()},
 mF(){var s=this
 s.qx()
@@ -48990,7 +48989,7 @@ if(f!=null)n.l(0,f,s)
 else{s.a=null
 s.lF()
 f=j.r.b
-if(s.w===B.bf){s.cS()
+if(s.w===B.bf){s.cT()
 s.aU(A.a4D())}f.b.D(0,s)}}++a1}o=!0}else n=i
 for(;a0<=e;a=f){r=a3[a0]
 if(o){m=r.a
@@ -49014,9 +49013,9 @@ if(l==null)l=d.a(l)
 if(!a4.u(0,l)){l.a=null
 l.lF()
 k=j.r.b
-if(l.w===B.bf){l.cS()
+if(l.w===B.bf){l.cT()
 l.aU(A.a4D())}k.b.D(0,l)}}return b},
-cS(){this.xJ()},
+cT(){this.xJ()},
 mF(){var s=this,r=s.f
 r.toString
 t.xL.a(r)
@@ -49895,17 +49894,17 @@ s.y=!1},
 $S:0}
 A.K5.prototype={}
 A.z_.prototype={
-cX(a){var s=A.N9(this.a,this.b,a)
+cY(a){var s=A.N9(this.a,this.b,a)
 s.toString
 return s}}
 A.qu.prototype={
-cX(a){var s=A.a8N(this.a,this.b,a)
+cY(a){var s=A.a8N(this.a,this.b,a)
 s.toString
 return s}}
 A.ks.prototype={
-cX(a){return A.pF(this.a,this.b,a)}}
+cY(a){return A.pF(this.a,this.b,a)}}
 A.lD.prototype={
-cX(a){var s=A.b6(this.a,this.b,a)
+cY(a){var s=A.b6(this.a,this.b,a)
 s.toString
 return s}}
 A.Au.prototype={}
@@ -50033,7 +50032,7 @@ if(r!=null)r.K(0,s.go_())
 s.eS$=null
 s.aV()},
 bX(){this.dH()
-this.cN()
+this.cO()
 this.o0()}}
 A.jd.prototype={
 bw(a){return new A.r_(A.fX(t.h,t.X),this,B.L,A.r(this).j("r_<jd.T>"))}}
@@ -50270,13 +50269,13 @@ A.a2V.prototype={
 pw(a){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=this
 if(f.b.i(0,B.e4)!=null){s=a.a
 r=a.b
-q=f.cW(B.e4,new A.aM(0,s/3,r,r)).a
+q=f.cX(B.e4,new A.aM(0,s/3,r,r)).a
 switch(f.f.a){case 0:p=s-q
 break
 case 1:p=0
 break
 default:p=null}f.dc(B.e4,new A.v(p,0))}else q=0
-if(f.b.i(0,B.e6)!=null){o=f.cW(B.e6,A.a5v(a))
+if(f.b.i(0,B.e6)!=null){o=f.cX(B.e6,A.a5v(a))
 switch(f.f.a){case 0:n=0
 break
 case 1:n=a.a-o.a
@@ -50286,7 +50285,7 @@ f.dc(B.e6,new A.v(n,(a.b-o.b)/2))}else m=0
 if(f.b.i(0,B.e5)!=null){s=a.a
 r=f.e
 l=Math.max(s-q-m-r*2,0)
-k=f.cW(B.e5,A.a5v(a).TI(l))
+k=f.cX(B.e5,A.a5v(a).TI(l))
 j=q+r
 if(f.d){r=k.a
 i=(s-r)/2
@@ -50527,7 +50526,7 @@ if(s!==p.a.x){for(r=0;!1;++r)s[r].a=null
 for(s=p.a.x,r=0;!1;++r)s[r].a=p
 p.C5()}p.a.toString
 for(s=p.e,q=s.length,r=0;r<s.length;s.length===q||(0,A.E)(s),++r)s[r].a.oe()},
-cS(){var s,r,q=this.Q
+cT(){var s,r,q=this.Q
 q===$&&A.e()
 s=q.length
 r=0
@@ -50863,7 +50862,7 @@ $2(a,b){if(!a.a)a.K(0,b)},
 $S:30}
 A.vQ.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -51051,7 +51050,7 @@ q=k.gnk()
 for(s=t.B,p=t.d;q!=null;){o=q.e
 o.toString
 s.a(o)
-if(!o.gvw()){q.cV(r,!0)
+if(!o.gvw()){q.cW(r,!0)
 n=k.a3
 n.toString
 m=k.k3
@@ -51100,7 +51099,7 @@ $2(a,b){return this.a.a.br(a,b)},
 $S:12}
 A.Hi.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -51512,7 +51511,7 @@ r=s===0?"local":"remote"
 a.push("depth: "+s+" ("+r+")")}}
 A.x1.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -51520,7 +51519,7 @@ s.aM$=null
 s.aV()}}
 A.x6.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -52013,7 +52012,7 @@ jD(a,b){this.at.saB(0,a)
 if(b!=null)b.aP(new A.Zx(this,a),t.P)},
 RA(a){return this.jD(a,null)},
 m(){var s=this,r=s.Q
-if(r!=null)r.cY(s.gA1())
+if(r!=null)r.cZ(s.gA1())
 r=s.as
 if(r!=null)r.m()
 s.y.c8(0,s.ay)
@@ -52030,7 +52029,7 @@ s.ch=null}break
 case 1:case 2:break}},
 $S:2}
 A.Zy.prototype={
-$0(){this.b.cY(this.c)
+$0(){this.b.cZ(this.c)
 var s=this.a.a
 if(s!=null)s.m()},
 $S:0}
@@ -53126,12 +53125,12 @@ q=r.e
 q===$&&A.e()
 s=q}s.a=r.a
 return s},
-cZ(a,b){return this.tG(b).cZ(0,b-this.w)},
+d_(a,b){return this.tG(b).d_(0,b-this.w)},
 eM(a,b){return this.tG(b).eM(0,b-this.w)},
 iP(a){return this.tG(a).iP(a-this.w)},
 h(a){return"BouncingScrollSimulation(leadingExtent: "+this.b+", trailingExtent: "+A.h(this.c)+")"}}
 A.MC.prototype={
-cZ(a,b){var s,r=this,q=r.e
+d_(a,b){var s,r=this,q=r.e
 q===$&&A.e()
 s=A.O(b/q,0,1)
 q=r.f
@@ -53781,7 +53780,7 @@ gjW(a){var s=this.x
 return(s==null?A.r(this).j("bL.T").a(s):s)!=null}}
 A.wh.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -54435,7 +54434,7 @@ r=A.a75(a,b)
 return s.VP(r,c)&&!s.Em(r,c)}}
 A.oS.prototype={
 bX(){this.dH()
-this.cN()
+this.cO()
 this.ec()},
 m(){var s=this,r=s.aM$
 if(r!=null)r.K(0,s.gdK())
@@ -54858,7 +54857,7 @@ if(s==null)return new A.S(A.O(0,a.a,a.b),A.O(0,a.c,a.d))
 return a.bg(s.fJ(this.zH(a)))},
 bP(){var s,r=this,q=A.M.prototype.gba.call(r),p=r.B$
 if(p==null)r.k3=new A.S(A.O(0,q.a,q.b),A.O(0,q.c,q.d))
-else{p.cV(r.zH(q),!0)
+else{p.cW(r.zH(q),!0)
 p=r.B$.k3
 p.toString
 r.k3=q.bg(p)}p=r.a3
@@ -55036,14 +55035,14 @@ bA(a){return this.f!==a.f}}
 A.nQ.prototype={
 oq(a){var s,r=this
 r.iF$=new A.ob(a,null)
-r.cN()
+r.cO()
 r.o0()
 s=r.iF$
 s.toString
 return s},
 o0(){var s=this.iF$
 if(s!=null)s.svQ(0,!this.eS$.a)},
-cN(){var s,r=this,q=r.c
+cO(){var s,r=this,q=r.c
 q.toString
 s=A.aas(q)
 q=r.eS$
@@ -55053,7 +55052,7 @@ s.Y(0,r.go_())
 r.eS$=s}}
 A.dN.prototype={
 oq(a){var s,r=this
-if(r.aM$==null)r.cN()
+if(r.aM$==null)r.cO()
 if(r.cu$==null)r.cu$=A.aI(t.Dm)
 s=new A.JS(r,a,null)
 s.svQ(0,!r.aM$.a)
@@ -55062,7 +55061,7 @@ return s},
 ec(){var s,r,q,p=this.cu$
 if(p!=null){s=!this.aM$.a
 for(p=A.fy(p,p.r),r=A.r(p).c;p.q();){q=p.d;(q==null?r.a(q):q).svQ(0,s)}}},
-cN(){var s,r=this,q=r.c
+cO(){var s,r=this,q=r.c
 q.toString
 s=A.aas(q)
 q=r.aM$
@@ -55635,7 +55634,7 @@ s=A.wZ.prototype
 s.Ks=s.m
 s=A.x2.prototype
 s.Kw=s.aH
-s.Kv=s.cS
+s.Kv=s.cT
 s=A.i0.prototype
 s.kK=s.m
 s=A.w9.prototype
@@ -55675,7 +55674,7 @@ s.Ia=s.nE
 s=A.fc.prototype
 s.Ie=s.k
 s=A.DL.prototype
-s.Jw=s.cZ
+s.Jw=s.d_
 s=A.nC.prototype
 s.J6=s.ve
 s.J8=s.vk
@@ -55707,7 +55706,7 @@ s=A.M.prototype
 s.jk=s.m
 s.f6=s.ah
 s.IZ=s.a2
-s.IY=s.cV
+s.IY=s.cW
 s.J_=s.aq
 s.IW=s.ee
 s.hl=s.eK
@@ -55776,7 +55775,7 @@ s.I6=s.un
 s=A.as.prototype
 s.bk=s.aH
 s.bB=s.aX
-s.n5=s.cS
+s.n5=s.cT
 s.dH=s.bX
 s.aV=s.m
 s.d2=s.b0
@@ -55787,7 +55786,7 @@ s.I3=s.tV
 s.xL=s.oX
 s.kI=s.iK
 s.I4=s.bX
-s.xJ=s.cS
+s.xJ=s.cT
 s.qx=s.mF
 s.xK=s.uF
 s.I5=s.b0
